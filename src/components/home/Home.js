@@ -2,6 +2,7 @@ import React from 'react';
 import './_home.scss'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import Alarm from '../alarm/Alarm';
 
 function Home () {
   return (
@@ -11,6 +12,7 @@ function Home () {
       <h1>Home</h1>
         <p>You are now logged in</p>
       </div>
+      <Alarm/>
     <Footer/>
     </>
   );

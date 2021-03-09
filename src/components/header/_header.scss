@@ -1,8 +1,19 @@
-$bgColorHeader:rgb(166, 179, 173);
+@import '../_variables';
 
 .header-container {
-  background-color: $bgColorHeader;
-  height: 10vh;
   margin: 0;
-  padding: 0;
+  padding:0;
+  background-color: $bgColor;
+
+}
+.logo-box {
+ border: 1px solid $bgColor;
+ width: 15%;
+}
+h3 {
+  color:$headerColor;
+}
+
+p {
+  color:$text;
 }

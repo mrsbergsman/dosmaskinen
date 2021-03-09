@@ -1,7 +1,7 @@
-$bgColorFooter:rgb(166, 179, 173);
+@import '../_variables';
 
 .footer-container{
-background-color: $bgColorFooter;
+background-color: $bg;
 height: 20vh;
 position:absolute;
 left:0;

@@ -5,7 +5,10 @@ import './_header.scss'
 function Header(){
   return(
   <div className="header-container">
-    <h1>Header</h1>
+    <div className="logo-box">
+      <h3>MEDICAL</h3>
+      <p>dosing machine</p>
+    </div>
   </div>
   )
 }
