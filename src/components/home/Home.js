@@ -3,6 +3,7 @@ import './_home.scss'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Alarm from '../alarm/Alarm';
+import mainIconwhite from '../../images/mainIconwhite.png';
 
 function Home () {
   return (
@@ -10,9 +11,10 @@ function Home () {
     <Header/>
     <div className="home-container">
       <h1>Home</h1>
+      <img className="icon-img" src={mainIconwhite}/>
         <p>You are now logged in</p>
       </div>
-      <Alarm/>
+      {/* <Alarm/> */}
     <Footer/>
     </>
   );
