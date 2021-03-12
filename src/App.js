@@ -35,6 +35,7 @@ function App() {
 
             {/* Hur kan vi få denna till registerComponent */}
             <Register showError={updateErrorMessage} updateTitle={updateTitle}/>  
+            <Login showError={updateErrorMessage} updateTitle={updateTitle}/> 
 
           </Route>
 
