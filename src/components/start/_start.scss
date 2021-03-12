@@ -1,5 +1,143 @@
- @import '../_variables';
+@import '../_variables';
 
 .start-container {
+  width: 100%;
+}
+
+.top-box{
+  width: 80%;
+  margin: auto;
+  margin-top: 9%;
+}
+
+.start-image{
+  width: 30vw;
+  margin-bottom: 8%;
+}
+
+.welcome-text{
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  margin-top: 9%;
+  font-size: 4vw;
+  letter-spacing: 3px;
+}
+
+.welcome-underText{
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 2.5vw;
+  letter-spacing: 3px;
+}
+
+.bottom-box{
+  margin: auto;
+  margin-top: 7%;
+  background-color: $bgColor;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section1-box{
+  width: 70%;
+}
+
+.machine-image{
+  width: 25vw;
+  margin-top: 35%;
+}
+
+.information-header{
+  margin-top: 16%;
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 1.6vw;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.information-text{
+  margin-top: 7%;
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 1vw;
+  margin-bottom: 21%;
+}
+
+.bottom-box2{
+  margin: auto;
+  // margin-top: 7%;
   // background-color: $bgColor;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-box2-header{
+  margin-top: 9%;
+  margin-bottom: 7%;
+  font-family: $fontRoboto;
+  color: $text;
+  font-size: 3vw;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.start-icons{
+  width: 15vw;
+}
+
+.start-icon-text{
+  margin-top: 13%;
+  margin-right: 6%;
+  margin-left: 6%;
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 1vw;
+  margin-bottom: 37%;
+}
+
+.navigation{
+  float:left;
+  margin-top: 8%;
+}
+
+.header-nav{
+  display: inline-block; 
+  text-decoration: none !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px; 
+  font-family: $fontRoboto;
+  font-size: 1vw;
+  // padding: 0px 70px 0px 0px;
+  margin: 20px;
+  color: white; 
+  list-style-type: none !important;
+}
+
+.header-link{
+  background-color: $button;
+  // background-color: #939b9a;
+  cursor: pointer;
+  padding: 10px 25px 10px 25px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #999999;
+  // transition: transform .3s;
+}
+
+.header-link:hover{
+  // transform: scale(1.1); 
+  color: #4d4d4d;
+  background-color: #e8e2d8;
+}
+
+.header-nav:hover{
+  color: #4d4d4d;
 }
