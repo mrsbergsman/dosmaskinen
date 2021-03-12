@@ -1,106 +1,336 @@
 import React, {Component} from 'react';
-import mainIconwhite from '../../images/mainIconwhite.png';
-import './_alarm.scss'
+
 
 class AlarmForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
 
+    this.state = {
+
+    info: {
+      message: "",
+      title:"",
+    } , 
+
+      items: [],
+      
+    }
+  }
+
+  //event handler to update the input
+  updateMessage(event) {
+    this.setState({
+      message: event.target.value
+    });
+  }
+
+  updateTitle(event) {
+    this.setState({
+      title: event.target.value
+    });
+  }
+
+
+  //push messeg in to items
+  handleClick() {
     
-      title:'',
-      notes:'',
-   
-      list:[],
-     }
+    var items = this.state.items;
 
-  }
-  changeTitle (input){
+    items.push(this.state.info);
+    
+
     this.setState({
-      title:input
-    })
+      items: items,
+      message: "",
+      title:"",
+    });
+    // var items = this.state.items;
+
+    // items.push(this.state.message);
+    // items.push(this.state.title);
+
+    // this.setState({
+    //   items: items,
+    //   message: "",
+    //   title:"",
+    // });
   }
 
-  changeNotes(input){
+  handleItemChanged(i, event) {
+    var items = this.state.items;
+    items[i]  = event.target.value;
+
     this.setState({
-     notes:input
-    }, () => console.log(input))
+      items: items
+    });
   }
 
-  // make clone to the list and push in the input from the user to the array
+  handleItemDeleted(i) {
+    var items = this.state.items;
 
-  addToList(input){
-   let listArray = this.state.list
+    items.splice(i, 1);
 
-   listArray.push(input);
-   
-   this.setState({
-  
-    list: listArray,
-    title: "",
-    notes:""
-
-   })
+    this.setState({
+      items: items
+    });
   }
 
-  render() { 
-    return ( 
+
+  //render the items in the table
+  //function that returns rendered JSX
+
+  renderRows() {
+    //ref to this, for nested returns on input and button
+    var context = this;
+
+    return  this.state.items.map(function(o, i) {
+              return (
+                <tr key={"item-" + i}>
+                  <td>
+                    <input
+                      type="text"
+                      value={o}
+                      onChange={context.handleItemChanged.bind(context, i)}
+                    />
+                  </td>
+                    <td>
+                    {/* <input
+                      type="text"
+                      value={o}
+                      onChange={context.handleItemChanged.bind(context, i)}
+                    /> */}
+                  </td>
+                  
+                  <td>
+                    <button
+                      onClick={context.handleItemDeleted.bind(context, i)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            });
+  }
+
+  render() {
+    return (
       <div>
-        <h1 >hej</h1>
-        <img className="icon-settings" src={mainIconwhite} alt="pills"/>
-
-
-        <form>
+        <table className="">
+          <thead>
+            <tr>
+              <th>
+                Medecin
+              </th>
+              <th>
+                time
+              </th>
+              <th>
+                notis
+              </th>              
+              <th>
+                Delete
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderRows()}
+          </tbody>
+        </table>
+        <hr/>
         <input
-        placeholder="Title"
-        onChange={(e) => this.changeTitle(e.target.value)} 
-        value={this.state.title}
+          type="text"
+          value={this.state.message}
+          onChange={this.updateMessage.bind(this)}
         />
-
-        <input
-        placeholder="Time"
-        onChange={(e) => this.changeNotes(e.target.value)} 
-        value={this.state.notes}
+          <input
+          type="text"
+          value={this.state.title}
+          onChange={this.updateTitle.bind(this)}
+          
         />
-        <input
-        placeholder="Notes"
-        onChange={(e) => this.changeNotes(e.target.value)} 
-        value={this.state.notes}
-        />
-        </form>
-        <button onClick={() => this.addToList(this.state.title)}>Add</button>
-
-        <ul>
-        {this.state.list.map((val, i) => (
-          <li key={i}>{val}</li>
-        ))}
-      </ul>
+        <button
+          onClick={this.handleClick.bind(this)}
+        >
+          Add Item
+        </button>
       </div>
-     );
+    );
   }
 }
  
 export default AlarmForm;
 
-
-
-
-
-
-//-----------------funkar-----------------------------
+//---------------backup
 
 // import React, {Component} from 'react';
 
 
-// class Alarm extends Component {
+// class AlarmForm extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+
+//     message: "",
+//     title:"",
+//       items: [],
+      
+//     }
+//   }
+
+//   //event handler to update the input
+//   updateMessage(event) {
+//     this.setState({
+//       message: event.target.value
+//     });
+//   }
+
+//   updateTitle(event) {
+//     this.setState({
+//       title: event.target.value
+//     });
+//   }
+
+
+//   //push messeg in to items
+//   handleClick() {
+    
+//     var items = this.state.items;
+
+//     items.push(this.state.message);
+//     items.push(this.state.title);
+
+//     this.setState({
+//       items: items,
+//       message: "",
+//       title:"",
+//     });
+//   }
+
+//   handleItemChanged(i, event) {
+//     var items = this.state.items;
+//     items[i]  = event.target.value;
+
+//     this.setState({
+//       items: items
+//     });
+//   }
+
+//   handleItemDeleted(i) {
+//     var items = this.state.items;
+
+//     items.splice(i, 1);
+
+//     this.setState({
+//       items: items
+//     });
+//   }
+
+
+//   //render the items in the table
+//   //function that returns rendered JSX
+
+//   renderRows() {
+//     //ref to this, for nested returns on input and button
+//     var context = this;
+
+//     return  this.state.items.map(function(o, i) {
+//               return (
+//                 <tr key={"item-" + i}>
+//                   <td>
+//                     <input
+//                       type="text"
+//                       value={o}
+//                       onChange={context.handleItemChanged.bind(context, i)}
+//                     />
+//                   </td>
+//                     <td>
+//                     {/* <input
+//                       type="text"
+//                       value={o}
+//                       onChange={context.handleItemChanged.bind(context, i)}
+//                     /> */}
+//                   </td>
+                  
+//                   <td>
+//                     <button
+//                       onClick={context.handleItemDeleted.bind(context, i)}
+//                     >
+//                       Delete
+//                     </button>
+//                   </td>
+//                 </tr>
+//               );
+//             });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <table className="">
+//           <thead>
+//             <tr>
+//               <th>
+//                 Medecin
+//               </th>
+//               <th>
+//                 time
+//               </th>
+//               <th>
+//                 notis
+//               </th>              
+//               <th>
+//                 Delete
+//               </th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {this.renderRows()}
+//           </tbody>
+//         </table>
+//         <hr/>
+//         <input
+//           type="text"
+//           value={this.state.message}
+//           onChange={this.updateMessage.bind(this)}
+//         />
+//           <input
+//           type="text"
+//           value={this.state.title}
+//           onChange={this.updateTitle.bind(this)}
+          
+//         />
+//         <button
+//           onClick={this.handleClick.bind(this)}
+//         >
+//           Add Item
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+ 
+// export default AlarmForm;
+
+//---------------stylad-----
+
+// import React, {Component} from 'react';
+// import mainIconwhite from '../../images/mainIconwhite.png';
+// import clockIconTransp from '../../images/clockIconTransp.png';
+// import messIconTransp from '../../images/messIconTransp.png';                                            
+// import './_alarm.scss'
+
+// class AlarmForm extends Component {
 //   constructor(props) {
 //     super(props);
 //     this.state = { 
 
-    
-//       title:'',
-//       notes:'',
-   
+ 
+//     title:'',
+//     notes:'',
+
+
 //       list:[],
 //      }
 
@@ -125,7 +355,8 @@ export default AlarmForm;
 //    listArray.push(input);
    
 //    this.setState({
-  
+
+//   //clear form
 //     list: listArray,
 //     title: "",
 //     notes:""
@@ -135,38 +366,72 @@ export default AlarmForm;
 
 //   render() { 
 //     return ( 
-//       <div>
-//         <h1>Alarm</h1>
-//         <form>
-//         <input
-//         placeholder="Title"
-//         onChange={(e) => this.changeTitle(e.target.value)} 
-//         value={this.state.title}
-//         />
+//      <div className="alarmForm-container"> 
 
-//         <textarea
-//         placeholder="Notes"
-//         rows="4" cols="50"
-//         onChange={(e) => this.changeNotes(e.target.value)} 
-//         value={this.state.notes}
-//         />
-//         </form>
-//         <button onClick={() => this.addToList(this.state.title)}>Add</button>
+//         <div className="form-container">
+//           <div className="name">
+//             <img className="icon-settings" src={mainIconwhite} alt="pills"/>
+//             <h3 className="h3">MEDICINE</h3>
+//             <p className="paragraph">Write names of the medicines</p>
+//             <input
+//             className="input-felt"
+//             placeholder=" ex. Alvedon, Ipren.. "
+//             onChange={(e) => this.changeTitle(e.target.value)} 
+//             value={this.state.title}
+//             />
+//           </div>
+//           <div className="time">
+//             <img className="icon-settings" src={clockIconTransp} alt="clock"/>
+//             <h3 className="h3">SET TIME</h3>
+//             <p className="paragraph">When to take the medicine?</p>
+//             <input
+//             className="input-felt"
+//             placeholder=" Time"
+//             onChange={(e) => this.changeNotes(e.target.value)} 
+//             value={this.state.notes}
+//             />
+//           </div>
+//           <div className="notes">
+//             <img className="icon-settings" src={messIconTransp} alt="letter"/>
+//             <h3 className="h3">MESSAGE/alarm</h3>
+//             <p className="paragraph">Add your own message</p>
+//             <input
+//             className="input-felt"
+//             placeholder=" ex. Taken with a meal.."
+//             onChange={(e) => this.changeNotes(e.target.value)} 
+//             value={this.state.notes}
+//             />
+            
+       
+//           </div>
+//           <div>
+//           <button className="add-btn" onClick={() => this.addToList(this.state.title)}><b>ADD</b></button>
+//           </div> 
 
-//         <ul>
-//         {this.state.list.map((val, i) => (
-//           <li key={i}>{val}</li>
+//         </div>
+//         <div className="table-container">
+//         <table>
+//           <th>Title</th>
+//           <th>Time</th>
+//           <th>Nots</th>
+//           <th>Delete</th>
+//           <tr>
+//           {this.state.list.map((val, i) => (
+//           <td key={i}>{val}</td>
 //         ))}
-//       </ul>
+//           </tr>
+//         </table>
+//         </div>
 //       </div>
 //      );
 //   }
 // }
  
-// export default Alarm;
+// export default AlarmForm;
 
 
-//--------------
+
+//-------------- table---------------------------------------
 // import React,{Component} from 'react';
 // import './_alarm.scss'
 

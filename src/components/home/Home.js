@@ -15,7 +15,7 @@ function Home () {
         <AlarmForm/>
       </div>
     
-    <Footer/>
+    {/* <Footer/> */}
     </>
   );
 }
