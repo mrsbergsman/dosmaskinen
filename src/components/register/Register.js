@@ -76,7 +76,7 @@ function Register(props) {
     //sends user to home on succesful regristration on click
     const redirectToHome = () => {
         props.updateTitle('Home')
-        props.history.push('/start');
+        props.history.push('/start'); //ändra till home sen
     }
 
     //redirect to login component insted
