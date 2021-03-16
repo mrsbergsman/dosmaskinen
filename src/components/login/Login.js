@@ -62,7 +62,7 @@ function Login(props) {
   //redirect to register component insted
   const redirectToRegister = () => {
     props.history.push('/register'); 
-    props.updateTitle('Register');
+    updateTitle('Register');
   }
 
 
