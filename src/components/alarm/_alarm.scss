@@ -1,31 +1,19 @@
 @import '../_variables';
 
-
-.alarmForm-container{
-  border:1px solid green;
-  
-}
+//form-styling
 .form-container {
-  // border: 1px solid blue;
   display: flex;
   justify-content: center;
   position: relative;
-  //justify-content: space-evenly;
 }
 .icon-settings {
   width: 50%;
-  
-
-  
-    
 }
 .name {
-  // border:2px solid pink;
   margin-top: 30px;
   width: 20%;
 }
 .time {
-  // border:2px solid pink;
   margin-top: 30px;
   width: 20%;
 }
@@ -33,7 +21,6 @@
   width: 20%;
   margin-top: 30px;
 }
-
 .paragraph {
   color:$text;
 }
@@ -79,45 +66,47 @@
   background-color: #638783
 }
 
-.table-container {
-  
+// table styling
+#table-container {
   margin-top:20px;
-  background-color: $bgColor;
-  height: 400px;
+  background-color:$bgColor;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+ }
+ 
+ #info {
+   text-align: center;
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   border: 3px solid #ddd;
+   width: 80%;
+   margin:auto 0px;
+   background-color: white;
+ }
+ 
+ #info td, #info th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ //make every other row in a different color
+ #info tr:nth-child(even){background-color: #f2f2f2;}
+ 
+ #info tr:hover {background-color: #ddd;}
+ 
+ #info th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: center;
+   background-color:$headerColor;
+   color: white;
+ }
+ .icon-delete {
+   width: 30px;
+ }
+ .icon-delete:hover{
+  filter: grayscale(50%);
 }
 
-
-// #table-container {
-//   background-color:$bgColor;
-//   display: flex;
-//   justify-content: center;
-//   padding: 50px;
-//  }
- 
-//  #info {
-//    text-align: center;
-//    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-//    border-collapse: collapse;
-//    border: 3px solid #ddd;
-//    width: 80%;
-//    margin:auto 0px;
-//    background-color: white;
-//  }
- 
-//  #info td, #info th {
-//    border: 1px solid #ddd;
-//    padding: 8px;
-//  }
- 
-//  #info tr:nth-child(even){background-color: #f2f2f2;}
- 
-//  #info tr:hover {background-color: #ddd;}
- 
-//  #info th {
-//    padding-top: 12px;
-//    padding-bottom: 12px;
-//    text-align: center;
-//    background-color:$headerColor;
-//    color: white;
-//  }
 
