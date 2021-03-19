@@ -65,6 +65,9 @@
 .add-btn:hover {
   background-color: #638783
 }
+.add-medicine {
+ // height: 100px;
+}
 
 // table styling
 #table-container {
@@ -108,5 +111,17 @@
  .icon-delete:hover{
   filter: grayscale(50%);
 }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active , .show > .btn-primary.dropdown-toggle{
+  background-color:$headerColor !important;
+}
 
+.btn-primary {
+  color: #fff;
+  background-color:$headerColor !important;
+  border-color:#7cbdb4 !important;
+  
+}
+.btn-primary:hover{
+  background-color:$headerColor !important;
+}
 

@@ -1,0 +1,37 @@
+@import '../_variables';
+
+.list-container {
+ // background-color: pink;
+  height: 400px;
+}
+.input-pill {
+  width: 230px;
+  height: 40px;
+  border: 2px solid rgb(143, 143, 143);
+  border-radius: 7px;
+  margin-left:25px
+}
+.delete-pill{
+  width: 30px;
+}
+.add-pill {
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.pill-list {
+  display: flex;
+  text-transform: capitalize;
+  border-bottom: 4px solid white;
+  justify-content: space-between;
+  background-color: $bgColor;
+  width: 230px;
+  margin:0px auto;
+  padding:10px;
+  
+   
+ // padding-left: 10px;
+}
+.pill {
+  margin-left: 20px;
+}
