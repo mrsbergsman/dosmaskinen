@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './_medicineList.scss'
 import deletetransparent from './../../images/deletetransparent.png';
 import closeTransp from './../../images/closeTransp.png';
+import { FaBeer } from 'react-icons/fa';
+
 
 class MedicineList extends Component {
 
@@ -78,7 +80,9 @@ class MedicineList extends Component {
        onClick={this.handleList.bind(this)}
       />
 
-      <div>{this.renderList()}</div>
+      <div>{this.renderList()}
+      <h3> Lets go for a <FaBeer />? </h3>
+      </div>
       </div>
     )
   }
