@@ -11,7 +11,7 @@ function Home () {
       <Header/>
         <div className="home-container">
           <Alarm/>
-          <MedicineList/>
+          {/* <MedicineList/> */}
         </div>
         {/* <Footer/> */}
     </>

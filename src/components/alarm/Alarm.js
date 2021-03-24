@@ -6,6 +6,10 @@ import clockIconTransp from '../../images/clockIconTransp.png';
 import messIconTransp from '../../images/messIconTransp.png';
 import deletetransparent from '../../images/deletetransparent.png'; 
 import './_alarm.scss' 
+import MedicineList from './MedicineList';
+import './_medicineList.scss'
+import { HiCheckCircle } from 'react-icons/hi';
+import {RiDeleteBackFill} from 'react-icons/ri';
 
 class Alarm extends Component {
   constructor(props) {
@@ -13,13 +17,66 @@ class Alarm extends Component {
 
     this.state = {
       message:'',
-      title:'',
+     // title:'',
       time:'',
       items: [],
-      
-    }
+
+      pills:"",
+      list:[],
+
+    } 
+  
+  }
+   // handle pills-------------------------------------------------
+   updatePills(event){
+   
+    this.setState({
+    pills:event.target.value
+
+    })
   }
 
+  handleList(){
+   
+  let list = [...this.state.list]
+
+  list.push({
+    pills:this.state.pills
+  })
+   this.setState({
+     list:list,
+     pills:"",
+   })
+  }
+
+  handleDeletedPill(i){
+    let updatedList = [...this.state.list];
+    updatedList.splice(i,1)
+    this.setState({
+      list:updatedList
+    })
+
+  }
+
+  renderList(){
+    var context2 = this;
+    return this.state.list.map(function(pill, i){
+      const {pills}   = pill
+      
+      return(
+        
+        <ul className="pill-list" key={"pill-" + i}>
+        <li className="pill">{pills}</li>
+        <RiDeleteBackFill
+        className="delete-pill"
+        onClick={context2.handleDeletedPill.bind(context2, i)}
+        />
+        </ul>
+      
+      )
+    })
+  }
+  //------------------------------------------------------------
   // event handler to update the message
   updateMessage(event) {
     this.setState({
@@ -45,22 +102,30 @@ class Alarm extends Component {
   //push message,title and time in to items
   handleClick() {
     let items = [...this.state.items];
+    let {list} =this.state
 
+   
    
     
     items.push({
       message: this.state.message,
-      title: this.state.title,
+      list: this.state.list,
       time: this.state.time
     });
+     console.log(this.state.list,'detta är listan för medecinerna!!!')
+     console.log(this.state.items, 'Detta är lisatn för hela skiten')
+
+
 
     // clear the input fields
     this.setState({
       items: items,
+      list:list,
       message: "",
       title:"",
       time:""
     });
+    
   }
 
 
@@ -81,11 +146,13 @@ class Alarm extends Component {
   renderRows() {
     // context is a ref to this.
     var context = this;
+   
         return  this.state.items.map(function (item, i) {
-          const { title,message,time } = item 
+          const { list,message,time } = item 
+          
               return (
                 <tr key={"item-" + i}>
-                  <td>{title}</td>
+                  <td></td>
                   <td>{message}</td>
                   <td>{time}</td>
                   <td>
@@ -94,7 +161,9 @@ class Alarm extends Component {
                   onClick={context.handleItemDeleted.bind(context, i)}
                   />
                   </td>
+                
                 </tr>
+              
             );
         });
     }
@@ -108,13 +177,22 @@ class Alarm extends Component {
             <img className="icon-settings" src={mainIconwhite} alt="pills"/>
             <h3 className="h3">MEDICINE</h3>
             <p className="paragraph">Write names of the medicines</p>
-            <input
-              className="input-felt"
-              placeholder="ex. Alvedon, Ipren.. "
+            <div className="list-container">
+              <input
+              className="input-pill"
               type="text"
-              value={this.state.title}
-              onChange={this.updateTitle.bind(this)}
-            />
+              value={this.state.pills}
+              onChange={this.updatePills.bind(this)}
+              
+              />
+              <HiCheckCircle
+                className="add-pill"
+                onClick={this.handleList.bind(this)}
+                />
+
+              <div>{this.renderList()}</div>
+          </div>
+           
           </div> 
 
           <div className="notes">
@@ -182,6 +260,7 @@ class Alarm extends Component {
             </tbody>
           </table>
         </div>
+
        {/* <DropdownButton style={{border:'1px solid red'}}id="dropdown-item-button" title="Dropdown button">
         <Dropdown.ItemText style={{backgroundColor:'pink'}}>Dropdown item text</Dropdown.ItemText>
         <Dropdown.Item as="button">Action</Dropdown.Item>
@@ -198,11 +277,14 @@ export default Alarm;
 
 //-----------------backup---------------------------------------------
 // import React, {Component} from 'react';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
 // import mainIconwhite from '../../images/mainIconwhite.png';
 // import clockIconTransp from '../../images/clockIconTransp.png';
 // import messIconTransp from '../../images/messIconTransp.png';
 // import deletetransparent from '../../images/deletetransparent.png'; 
 // import './_alarm.scss' 
+// import MedicineList from './MedicineList';
 
 // class Alarm extends Component {
 //   constructor(props) {
@@ -243,9 +325,7 @@ export default Alarm;
 //   handleClick() {
 //     let items = [...this.state.items];
 
-//     if(this.state.time==""){
-//       console.log('time is empty')
-//     }
+   
     
 //     items.push({
 //       message: this.state.message,
@@ -314,6 +394,7 @@ export default Alarm;
 //               value={this.state.title}
 //               onChange={this.updateTitle.bind(this)}
 //             />
+           
 //           </div> 
 
 //           <div className="notes">
@@ -381,6 +462,12 @@ export default Alarm;
 //             </tbody>
 //           </table>
 //         </div>
+//        {/* <DropdownButton style={{border:'1px solid red'}}id="dropdown-item-button" title="Dropdown button">
+//         <Dropdown.ItemText style={{backgroundColor:'pink'}}>Dropdown item text</Dropdown.ItemText>
+//         <Dropdown.Item as="button">Action</Dropdown.Item>
+//         <Dropdown.Item as="button">Another action</Dropdown.Item>
+//         <Dropdown.Item style={{backgroundColor:'yellow'}} as="button">Something else</Dropdown.Item>
+//         </DropdownButton> */}
 //       </div>
 //     );
 //   }
