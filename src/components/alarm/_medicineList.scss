@@ -2,21 +2,29 @@
 
 .list-container {
  // background-color: pink;
-  height: 400px;
+ // height: 400px;
 }
 .input-pill {
-  width: 230px;
+  width: 70%;
   height: 40px;
   border: 2px solid rgb(143, 143, 143);
   border-radius: 7px;
-  margin-left:25px
+  bottom:0;
 }
 .delete-pill{
-  width: 30px;
+  font-size: 25px;
+  color:#dc3644;
+}
+
+.delete-pill:hover {
+ color:#bd2130;
 }
 .add-pill {
-  transform: rotate(45deg);
-  width: 30px;
+  font-size: 30px;
+  color:#28a745;
+}
+.add-pill:hover{
+  color:#238a3b;
 }
 
 .pill-list {
@@ -25,7 +33,7 @@
   border-bottom: 4px solid white;
   justify-content: space-between;
   background-color: $bgColor;
-  width: 230px;
+  width: 70%;
   margin:0px auto;
   padding:10px;
   
