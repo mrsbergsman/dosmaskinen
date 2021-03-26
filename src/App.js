@@ -4,6 +4,8 @@ import Login from './components/login/Login';
 import Start from './components/start/Start';
 import Home from './components/home/Home';
 import Register from './components/register/Register';
+import Record from './components/record/Record';
+import Information from './components/information/Information';
 
 import AlertComponent from './components/AlertComponent/AlertComponent';  
 //import RegisterHeader from './components/registerHeader/RegisterHeader';
@@ -29,9 +31,10 @@ function App() {
 
           <Route path="/start" exact component={Start} />
           <Route path="/login" component={Login} />
-          <Route path="/home" component={Home}/>
-
-          <Route path="/register" component={Register}>
+          <Route path="/home" component={Home} />
+          <Route path="/information" component={Information} />
+          <Route path="/record" component={Record} /> 
+          <Route path="/register" component={Register} > 
 
             {/* Hur kan vi få denna till registerComponent */}
             <Register showError={updateErrorMessage} updateTitle={updateTitle}/>  

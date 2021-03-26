@@ -1,0 +1,86 @@
+@import '../_variables';
+
+.information-container{
+    width: 100%;
+}
+
+.informationHeader{
+    margin-top: 8%;
+    margin-bottom: 7%;
+}
+
+.info-header{
+    font-family: $fontRoboto;
+    color: $text;
+    font-size: 3vw;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.info-undertext{
+    font-family: $fontRoboto;
+    color: $text;
+    width: 70%;
+    margin: auto;
+    letter-spacing: 1px;
+    // text-align: justify;
+}
+
+.info-section1{
+    width: 80%;
+    margin: auto;
+}
+
+.info-icons{
+    width: 18vw;
+}
+
+.info-box1{
+    margin-top: 5%;
+}
+
+.info-box2{
+    margin-top: 16%;
+}
+
+.headlines{
+    font-family: $fontRoboto;
+    text-align: justify;
+    color: $headerColor;
+    font-size: 1.8vw;
+    letter-spacing: 1px;
+}
+
+.info-box-text{
+    font-family: $fontRoboto;
+    text-align: justify;
+    color: $text;
+    font-size: 1vw;
+}
+
+.info-medicine-box{
+    //background-color: $bgColor;
+    // background-color: #f8faf9;
+    margin-bottom: 7%;
+    padding: 1% 9% 3% 0%;
+    //  box-shadow: 8px 8px 8px #b6b6b6;
+    //  border-radius: 10px;
+}
+
+.info-setTime-box{
+    // background-color: $bgColor;
+    // background-color: #f8faf9;
+    margin-bottom: 7%;
+    padding: 1% 0% 3% 9%;
+    // box-shadow: 8px 8px 8px #b6b6b6;
+    // border-radius: 10px;
+}
+
+.info-message-box{
+    //background-color: $bgColor;
+    // background-color: #f8faf9;
+    margin-bottom: 8%;
+    padding: 1% 9% 3% 0%;
+    // box-shadow: 8px 8px 8px #b6b6b6;
+    // border-radius: 10px;
+}
