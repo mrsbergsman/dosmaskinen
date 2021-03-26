@@ -10,59 +10,40 @@
 .logo-box {
  border: 1px solid $bgColor;
  width: 30%;
+ 
 }
 
 .logo {
   margin-top: 25px;
+  margin-bottom: 25px;
   font-family: $fontRoboto;
   color: $headerColor;
-  letter-spacing: 6px;
-  font-size: 2vw;
-  font-weight: 800;
+  letter-spacing: 4px;
+  font-size: 1.7vw;
 }
 
-.logo-underText {
-  font-family: $fontRoboto;
-  color: $text;
-  font-size: 1.5vw;
-  color:$text;
-  letter-spacing: 5px;
-  margin-top: -12px;
-  margin-bottom: 7%;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  
 }
 
-// .navigation{
-//   float: right;
-//   margin-top: -5%;
-// }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
 
-// .header-nav{
-//   display: inline-block; 
-//   text-decoration: none !important;
-//   text-align: center;
-//   text-transform: uppercase;
-//   letter-spacing: 2px; 
-//   font-family: $fontRoboto;
-//   font-size: 1vw;
-//   padding: 0px 70px 0px 0px;
-//   color: white; 
-//   list-style-type: none !important;
-// }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+} 
 
-// .header-link{
-//   background-color: #91afac;
-//   cursor: pointer;
-//   padding: 7px 15px 7px 15px;
-//   border-radius: 3px;
-//   box-shadow: 2px 2px 5px #999999;
-//   transition: transform .3s;
-// }
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+} 
 
-// .header-link:hover{
-//   transform: scale(1.1); 
-//   color: white;
-// }
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
 
-// .header-nav:hover{
-//   color: white;
-// }
