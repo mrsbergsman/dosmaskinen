@@ -12,10 +12,12 @@
 .name {
   margin-top: 30px;
   width: 20%;
+ 
 }
 .time {
   margin-top: 30px;
   width: 20%;
+
 }
 .notes {
   width: 20%;
@@ -34,6 +36,12 @@
   border: 2px solid rgb(143, 143, 143);
   border-radius: 7px;
   bottom:0;
+  
+}
+.input-felt:focus  {
+  outline: none;
+  border: 2px solid #679e97;
+ 
 }
 // style placholder on every browser
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -60,13 +68,38 @@
   margin-left: 30px;
   border-radius: 7px;
   border:none;
+  
 }
 
 .add-btn:hover {
   background-color: #638783
 }
-.add-medicine {
- // height: 100px;
+
+// styling  dropdow button
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active , .show > .btn-primary.dropdown-toggle{
+  background-color:#f7f5f1!important;
+}
+
+.btn-primary {
+  background-color:white !important;
+  border: 2px solid rgb(143, 143, 143) !important;
+  width:70% !important;
+  height: 42px !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+  margin: 0px 0px 0px !important;
+}
+.btn-primary:hover{
+  background-color:#f7f5f1 !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #f7f5f1!important;
+}
+
+#dropdown-item-button {
+  color:$text;
+  font-weight: bold;
 }
 
 // table styling
@@ -76,59 +109,90 @@
   display: flex;
   justify-content: center;
   padding: 50px;
+}
 
- }
- 
- #info {
-   text-align: center;
-   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-   border-collapse: collapse;
-   border: 3px solid #ddd;
-   width: 80%;
-   margin:auto 0px;
-   background-color: #becccb;
-   box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
-   -webkit-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
-   -moz-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
- }
- 
- #info td, #info th {
-   border: 3px solid #f7f5f1;
-   padding: 8px;
- }
+#info {
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 80%;
+  margin:auto 0px;
+  background-color: #becccb;
+  box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
+}
+
+#info td, #info th {
+  border: 3px solid #f7f5f1;
+  padding: 8px;
+}
+
+.row-title {
+  color:$text;
+  font-size: 17px;
+  word-spacing: 100vw;
+  width: 35%;
+  font-weight: bold;
+  text-align: left;
+  text-transform:capitalize;
+  font-family: $fontRoboto;
+}
+.row-message {
+  color:$text;
+  font-size: 17px;
+  font-family: $fontRoboto;
+  font-weight: bold;
+  text-transform:capitalize;
+  width: 35%;
+}
+.row-time{
+  color:$text;
+  font-size: 17px;
+  font-family: $fontRoboto;
+  font-weight: bold;
+  width: 15%;
+  letter-spacing: 2px;
+}
 
  //make every other row in a different color
- #info tr:nth-child(even){background-color:#ecdedf;}
- 
- #info tr:hover {
-   background-color:#f3efeb;
- 
-  }
- 
- #info th {
-   padding-top: 12px;
-   padding-bottom: 12px;
-   text-align: center;
-   background-color:$headerColor;
-   color: white;
- }
- .icon-delete {
-   width: 30px;
- }
- .icon-delete:hover{
+#info tr:nth-child(even){background-color:#ecdedf;}
+
+#info tr:hover {
+  background-color:#f3efeb;
+
+}
+
+#info th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:$headerColor;
+  color: white;
+}
+.icon-delete {
+  width: 15%;
+}
+
+.icon-delete:hover{
   filter: grayscale(50%);
 }
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active , .show > .btn-primary.dropdown-toggle{
-  background-color:$headerColor !important;
+
+// #appt:focus {
+//   //background-color: #f7f5f1;
+// }
+input[type=time]::-webkit-datetime-edit-hour-field {
+ // background-color: #f2f4f5;
+  border-radius: 15%;
+  padding: 19px 9px;
+  color:$text;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color:$headerColor !important;
-  border-color:#7cbdb4 !important;
-  
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+  //background-color: #f2f4f5;
+  border-radius: 15%;
+  padding: 15px 9px;
+  color:$text;
 }
-.btn-primary:hover{
-  background-color:$headerColor !important;
-}
-
