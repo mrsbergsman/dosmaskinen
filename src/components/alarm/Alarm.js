@@ -4,9 +4,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import mainIconwhite from '../../images/mainIconwhite.png';
 import clockIconTransp from '../../images/clockIconTransp.png';
 import messIconTransp from '../../images/messIconTransp.png';
-import deletetransparent from '../../images/deletetransparent.png'; 
-import './_alarm.scss' 
+import quarterClock from '../../images/quarterClock.png';  
+import './_alarm.scss'; 
 import {MdKeyboardVoice} from 'react-icons/md'
+import {MdDeleteForever} from 'react-icons/md';
 
 class Alarm extends Component {
   constructor(props) {
@@ -76,24 +77,25 @@ class Alarm extends Component {
     });
   }
 
-  // Returns JSX and render title,message and time in the table
+  // Returns JSX and render title,message and time in the card
   renderRows() {
     // context is a ref to this.
     var context = this;
         return  this.state.items.map(function (item, i) {
           const { title,message,time } = item 
               return (
-                <tr key={"item-" + i}>
-                  <td className="row-title">💊 {title}</td> 
-                  <td className="row-message">{message}</td>
-                  <td className="row-time">{time}</td>
-                  <td>
-                  <img 
-                  className="icon-delete" src={deletetransparent} alt="delete"
-                  onClick={context.handleItemDeleted.bind(context, i)}
-                  />
-                  </td>
-                </tr>
+                <ul className="card-styling" key={"item-" + i}>
+                  <li className="card-time"><p>Time:</p><b className="time-style">{time}</b></li>
+                  <li className="card-message"><p>Alarm:</p><b className="message-style">{message}</b></li>
+                  <li className="card-title"><p>Medicine:</p>{title}</li> 
+                <div className="card-img">
+                    <img className="quarter-clock" src={quarterClock}/>
+                    <MdDeleteForever 
+                    className="delete-card"
+                    onClick={context.handleItemDeleted.bind(context, i)}
+                    />
+                </div>
+                </ul>
             );
         });
     }
@@ -122,9 +124,9 @@ class Alarm extends Component {
             <h3 className="h3">MESSAGE</h3>
             <p className="paragraph">Add your own message</p>
               <DropdownButton id="dropdown-item-button" title="MESSAGE">
-              <Dropdown.Item as="button" value="My personal message  🗣" onClick={this.updateMessage.bind(this)}>My personal message</Dropdown.Item>
-              <Dropdown.Item as="button" value="Birdsong 🎶 " onClick={this.updateMessage.bind(this)}>Birdsong</Dropdown.Item>
-              <Dropdown.Item as="button" value="Default alarm  🔉" onClick={this.updateMessage.bind(this)}>Default alarm</Dropdown.Item>
+              <Dropdown.Item as="button" value="My personal message" onClick={this.updateMessage.bind(this)}>My personal message</Dropdown.Item>
+              <Dropdown.Item as="button" value="Birdsong" onClick={this.updateMessage.bind(this)}>Birdsong</Dropdown.Item>
+              <Dropdown.Item as="button" value="Default alarm" onClick={this.updateMessage.bind(this)}>Default alarm</Dropdown.Item>
               <hr/>
               <Dropdown.Item as="button">
                 Record new message 
@@ -160,33 +162,15 @@ class Alarm extends Component {
           </div>
         </div>
         
-         {/* The interface for the table. */}
-        <div id="table-container">
-          <table id='info'>
-            <thead>
-              <tr>
-                <th style={{width:'35%'}}>
-                  MEDICINE
-                </th>
-                <th style={{width:'35%'}}>
-                  MESSAGE
-                </th>
-                <th style={{width:'15%'}}>
-                  TIME
-                </th>              
-                <th style={{width:'15'}}>
-                  DELETE
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.renderRows()}
-            </tbody>
-          </table>
+         {/* The interface for the cards */}
+        <div id="main-card-container">
+          <div id="card-container">
+            {this.renderRows()}
+          </div>
         </div>
-
       </div>
     );
   }
 }
 export default Alarm;
+
