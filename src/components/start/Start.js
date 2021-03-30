@@ -4,9 +4,13 @@ import Footer from '../footer/Footer';
 import './_start.scss'
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import Scrollspy from 'react-scrollspy'
+
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 import onePill from '../../images/medIconTransp.png';
 import clock from '../../images/clockIconTransp.png';
-import message from '../../images/messIconTransp.png';
+import message from '../../images/voiceMailTransp.png';
 import info from '../../images/infoGreenTransp.png';
 import video from '../../video/medi.mp4';
 
@@ -16,6 +20,8 @@ function Start() {
     AOS.init({
     });
   }, []);
+
+  
 
   return (
     <>
@@ -42,10 +48,10 @@ function Start() {
       </div>  
 
       <div className="bottom-box">
-        <div className="section1-box">
+        <div data-aos="fade-up" data-aos-duration="3000" className="section1-box">
           <div className="row">   
             <div className="col">
-              <img data-aos="fade-up" data-aos-duration="3000" className="machine-image" src={info} alt="Info icon"/>  
+              <img  className="machine-image" src={info} alt="Info icon"/>  
             </div>       
             <div className="col">
               <div className="bottom-information-box">              
@@ -72,42 +78,86 @@ function Start() {
         </div>
       </div>
 
-      <div>
-        <div className="bottom-box2">
+      {/* <div> */}
+      <p data-aos="fade-up" data-aos-duration="3000" className="bottom-box2-header">How it works!</p>
+        <div data-aos="fade-up" data-aos-duration="3000" className="bottom-box2">
           <div className="section2-box">
-            <p className="bottom-box2-header">How it works?</p>
-            <div class="row">
-              <div class="col">
-                <div className="onepill-card">
-                  <img className="start-icons" src={onePill} alt="A pill icon"/>
-                  <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  </p>
-                </div>
+          <div className="nav-bakground"></div>
+          
+              <div data-aos="fade-up" data-aos-duration="3000" className="scroll-nav">
+                <ul>
+                  <li className="scroll-link-listItem">
+                    <Link className="scrollink" to="medecine" spy={true} smooth={true} offset={50} duration={500} >
+                      The medicine list
+                    </Link>
+                  </li>
+                  <li className="scroll-link-listItem">
+                  <Link className="scrollink" to="setTime" spy={true} smooth={true} offset={50} duration={500} >
+                    Set the time to take the medicine
+                  </Link>
+                  </li>
+                  <li className="scroll-link-listItem">
+                  <Link className="scrollink" to="record" spy={true} smooth={true} offset={50} duration={500} >
+                    Record a personal message 
+                  </Link> 
+                  </li>
+                </ul>
               </div>
-              <div class="col">
-                <div className="clock-card">
-                  <img className="start-icons" src={clock} alt="A clock icon"/>
-                  <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  </p>
+
+              <div data-aos="fade-up" data-aos-duration="3000" className="start-information-bottom2box">
+                <div id="medecine" className="onepill-box">
+                  <div class="row">
+                    <div class="col">
+                      <img className="start-icons" src={onePill} alt="A pill icon"/>
+                    </div>
+                    <div class="col">
+                      <p className="start-icon-header">The medicine list</p>
+                      <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua."</p>
+                      <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col">
-                <div className="message-Card">
-                  <img className="start-icons" src={message} alt="A message icon"/>
-                  <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  </p>
+
+                <div id="setTime" className="clock-box">              
+                  <div class="row">
+                    <div class="col">
+                      <img className="start-icons" src={clock} alt="A clock icon"/>
+                    </div>
+                    <div class="col">
+                      <p className="start-icon-header">Set the time when to take the medicine</p>
+                      <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua."</p>
+                      <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      </p>
+                    </div>
+                  </div> 
                 </div>
-              </div>
-            </div>
+
+                <div id="record" className="message-box">
+                  <div class="row">
+                    <div class="col">
+                      <img className="start-icons" src={message} alt="A message icon"/>
+                    </div>
+                    <div class="col">
+                    <p className="start-icon-header">Record a personal message</p>
+                    <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua."</p>
+                      <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>    
           </div>
-        </div>
-      </div>      
+        </div>      
     </div>
     <Footer/>
     </>
