@@ -117,8 +117,8 @@
 
 .bottom-information-box{
   padding: 12%;
-  margin-top: 15%;
-  margin-bottom: 10%;
+  margin-top: 25%;
+  // margin-bottom: 5%;
   margin-left: -12%;
 }
 
@@ -128,7 +128,7 @@
 
 .machine-image{
   width: 25vw;
-  margin-top: 31%;
+  margin-top: 43%;
 }
 
 .information-header{
@@ -162,14 +162,27 @@
   justify-content: space-around;
 }
 
+.bottom-box2:after{
+  content: '';
+  position: absolute;
+  width: 37%;
+  left:0;
+  height:100%;
+  background: white;
+  border-right: 3px solid rgb(192, 192, 192) ;
+}
+
 .section2-box{
   width: 90%;
   margin-bottom: 8%;
+  
 }
 
+
 .bottom-box2-header{
-  margin-top: 8%;
-  margin-bottom: 7%;
+  // margin-left: 59%;
+  margin-top: 10%;
+  margin-bottom: 6%;
   font-family: $fontRoboto;
   color: $text;
   font-size: 3vw;
@@ -177,46 +190,97 @@
   text-transform: uppercase;
 }
 
+.scroll-nav{
+  float: left;
+  text-align: justify;
+  width: 35%;
+  position: -webkit-sticky;
+	position: sticky;
+	top: 35%;
+  z-index: 9999;
+  margin-top: 3%;
+  // border-left: 3px solid rgb(192, 192, 192);
+}
+
+.scroll-link-listItem{
+  text-decoration: none !important;
+  list-style-type: none !important;
+  margin: 15px;
+}
+
+.scrollink {
+  font-family: $fontRoboto;
+  font-size: 1.5vw;
+  color: $text; 
+  text-decoration: none !important;
+  list-style-type: none !important;
+  cursor: pointer;
+  padding: 2%;
+}
+
+.scrollink:hover{
+  color: $text;  
+  border-left: 3px solid rgb(192, 192, 192);
+}
+
+
+.start-information-bottom2box{
+  margin-left: 35%;
+}
+
 .start-icons{
-  width: 15vw;
+  width: 19vw;
+}
+
+.start-icon-header{
+  margin-top: 12%;
+  // margin-right: 7%;
+  margin-left: -15%;
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 1.2vw;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.start-icon-underText{
+  margin-top: 8%;
+  // margin-right: 7%;
+  margin-left: -15%;
+  font-family: $fontRoboto;
+  text-align: justify;
+  color: $text;
+  font-size: 1vw;
+  font-weight: bold;
 }
 
 .start-icon-text{
-  margin-top: 8%;
-  margin-right: 7%;
-  margin-left: 7%;
+  margin-top: 3%;
+  // margin-right: 7%;
+  margin-left: -15%;
   font-family: $fontRoboto;
   text-align: justify;
   color: $text;
   font-size: 1vw;
 }
 
-.onepill-card{
+.onepill-box{
   margin: 0px 2% 0px 2%;
-  background-color: rgb(255, 255, 255);
   padding-top: 8%;
-  padding-bottom: 8%;
-  box-shadow: 8px 10px 15px #acacac;
-  border-radius: 10px;
-  
+  padding-bottom: 20%;
 }
 
-.clock-card{
+.clock-box{
   margin: 0px 2% 0px 2%;
-  background-color: rgb(255, 255, 255);
   padding-top: 8%;
-  padding-bottom: 8%;
-  box-shadow: 8px 10px 15px #acacac;
-  border-radius: 10px;
+  padding-bottom: 20%;
 }
 
-.message-Card{
+.message-box{
   margin: 0px 2% 0px 2%;
-  background-color: rgb(255, 255, 255);
   padding-top: 8%;
-  padding-bottom: 8%;
-  box-shadow: 8px 10px 15px #acacac;
-  border-radius: 10px;
+  padding-bottom: 7%;
 }
 
 
