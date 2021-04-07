@@ -10,8 +10,8 @@ import MedicineList from '../alarm/MedicineList';
 function Home () {
   return (
     <>
-      <Header/>
-      <Navigationbar/>
+      {/* <Header/>
+      <Navigationbar/> */}
         <div className="home-container">
           <Alarm/>
           {/* <MedicineList/> */}
