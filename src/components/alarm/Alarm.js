@@ -23,7 +23,7 @@ class Alarm extends Component {
       
     }
   }
-
+ 
   // event handler to update the message
   updateMessage(event) {
     this.setState({
@@ -75,7 +75,6 @@ class Alarm extends Component {
       items:updated_items
     });
   }
-
   // Returns JSX and render name, time, voicemail in the card
   renderRows() {
     // context is a ref to this.
@@ -104,9 +103,10 @@ class Alarm extends Component {
             );
         });
     }
-
    // The interface for the input fields.
   render() {
+  
+
     return (
       <div className="alarmForm-container">
         <div className="form-container">
@@ -125,12 +125,7 @@ class Alarm extends Component {
               value={this.state.time}
               onChange={this.updateTime.bind(this)}
             />
-           {/* <TimePicker
-           className="input-felt"
-           value={this.state.time}
-           onChange={this.updateTime.bind(this)}
            
-           /> */}
             </div> 
           </div>
 
