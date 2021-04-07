@@ -174,7 +174,8 @@ input[type=time]::-webkit-datetime-edit-minute-field {
   font-size: 20px;
   font-family: $fontNumber;
   font-weight: bold;
-  background-color: #d5e2e1;  
+  background-color: #d5e2e1;
+   
 }
 
 .message-style {
@@ -184,12 +185,12 @@ input[type=time]::-webkit-datetime-edit-minute-field {
 
 .card-title {
   display: flex;
+  text-align: left;
   color:$text;
   word-spacing: 100vw;
-  margin-left: -180px;
+  margin-left: 0px;
   font-size: 20px;
   font-weight: bold;
-  // text-align: left;
   text-transform:capitalize;
   font-family: $fontNumber;
   border-radius: 10px;
