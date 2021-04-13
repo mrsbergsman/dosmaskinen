@@ -3,47 +3,44 @@
 .header-container {
   margin: 0;
   padding:0;
+  height: 80px;
   background-color: $bgColor;
   width: 100%;
-
+  // this is necessary for the hamburgermenu 
+  //not to look funny when its opend
+  position: relative;
+  z-index: 3;
 }
+
 .logo-box {
- border: 1px solid $bgColor;
  width: 30%;
- 
+ display: inline;
 }
 
 .logo {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 0px;
   font-family: $fontRoboto;
   color: $headerColor;
   letter-spacing: 4px;
-  font-size: 1.7vw;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 7%;
+  padding:18px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  
-}
+@media only screen and (max-width: 900px) {
+  .logo  {
+    text-align: center;
+    margin-left: 0px;
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  
+  }
 } 
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  
+@media only screen and (max-width: 500px) {
+  .logo  {
+    font-size: 22px;
+    padding:25px;
+  }
 } 
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  
-}
 
