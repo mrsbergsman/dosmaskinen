@@ -10,7 +10,6 @@ import {MdKeyboardVoice} from 'react-icons/md'
 import {MdDeleteForever} from 'react-icons/md';
 import {MdModeEdit} from 'react-icons/md';
 
-
 class Alarm extends Component {
   constructor(props) {
     super(props);
@@ -75,6 +74,7 @@ class Alarm extends Component {
       items:updated_items
     });
   }
+
   // Returns JSX and render name, time, voicemail in the card
   renderRows() {
     // context is a ref to this.
@@ -103,10 +103,9 @@ class Alarm extends Component {
             );
         });
     }
+
    // The interface for the input fields.
   render() {
-  
-
     return (
       <div className="alarmForm-container">
         <div className="form-container">
@@ -125,13 +124,11 @@ class Alarm extends Component {
               value={this.state.time}
               onChange={this.updateTime.bind(this)}
             />
-           
             </div> 
           </div>
-
           <div className="name">
             <div className="icon-container">
-             <img className="icon-settings" src={medIconTransp} alt="pill"/>
+            <img className="icon-settings" src={medIconTransp} alt="pill"/>
             </div>
             <div className="text-container">
             <h3 className="h3">MEDICINE</h3>
