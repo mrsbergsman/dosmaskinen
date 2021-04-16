@@ -1,208 +1,71 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom'
-import { FiMenu } from 'react-icons/fi';
-import { GrClose } from 'react-icons/gr';
-import './_navigationbar.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import './_navigationbar.scss'
 function Navigationbar () {
-
-  useEffect(() => {
-    AOS.init({
-    });
-  }, []);
-  
-const [showMenu, setShowMenu] = useState(false);
-
-const [toogleAnimtion, setToogleAnimtion] = useState(true);
-
-// toggle hamburgermenu opend/closed and show and hide navbar.
-let navbar
-let toggle
-let menu
-
-
-if(showMenu === true) {
-
-  toggle = <div className="close"><GrClose/></div>
-  console.log(setToogleAnimtion +'hello')
-  // toggle = <div data-aos="fade-right"  data-aos-duration="1500" className="close"><GrClose/></div> 
- 
-  { toogleAnimtion ? (
-    menu = 
-    <div className="menu-mobile" data-aos="fade-right"  data-aos-duration="1500"> 
-        <ul data-aos="fade-up"  data-aos-duration="1000" className="navlinks-hamburger">
-          <div style={{marginTop:'50px'}}>
-          <NavLink exact to="/home"> 
-            <li className='nav-link'>Home</li>
-          </NavLink>
-          <NavLink exact to="/record"> 
-            <li className='nav-link'>Record a message</li>
-          </NavLink>
-          <NavLink exact to="/information"> 
-            <li className='nav-link'>Information</li>
-          </NavLink>
-          <NavLink exact to="/"> 
-            <li style={{marginLeft:"20px"}}className='logout-link'>Log out</li>
-          </NavLink>
-          </div>
-        </ul>
-    </div>
-  ) : (
-    menu =  
-    <div className="menu-mobile" data-aos="fade-left"  data-aos-duration="1500"> 
-        <ul data-aos="fade-up"  data-aos-duration="1000" className="navlinks-hamburger">
-          <div style={{marginTop:'50px'}}>
-          <NavLink exact to="/home"> 
-            <li className='nav-link'>Home</li>
-          </NavLink>
-          <NavLink exact to="/record"> 
-            <li className='nav-link'>Record a message</li>
-          </NavLink>
-          <NavLink exact to="/information"> 
-            <li className='nav-link'>Information</li>
-          </NavLink>
-          <NavLink exact to="/"> 
-            <li style={{marginLeft:"20px"}}className='logout-link'>Log out</li>
-          </NavLink>
-          </div>
-        </ul>
-    </div>
-  ) } 
-
-} else {
-
-  toggle = <FiMenu className="open" />
- 
-  navbar =  
-  <div className="navigationbar-container">
-  <ul className="navlinks">
-    <NavLink className="nav" exact to="/home"> 
-      <li className='nav-link'>Home</li>
-    </NavLink>
-    <NavLink className="nav" exact to="/record"> 
-      <li className='nav-link'>Record a message</li>
-    </NavLink>
-    <NavLink className="nav" exact to="/information"> 
-      <li className='nav-link'>Information</li>
-    </NavLink>
-    <NavLink className="nav" exact to="/"> 
-      <li className='logout-link'>Log out</li>
-    </NavLink>
-  </ul>
-</div>
-   
-}
   return (
-
     <>
-      <nav>
-      {navbar}
-        <div 
-          className="hamburger-menu"
-          onClick={() => setShowMenu(!showMenu) && setToogleAnimtion(!toogleAnimtion)} >
-          {toggle}
-        </div>
-      {menu}
-      </nav>
+    {/* this is the navbar for full screen */}
+    <div className="navigationbar-container">
+        <ul className="navlinks">
+          <NavLink className="nav" exact to="/home"> 
+            <li className='nav-link'>Home</li>
+          </NavLink>
+          <NavLink className="nav" exact to="/record"> 
+            <li className='nav-link'>Record a message</li>
+          </NavLink>
+          <NavLink className="nav" exact to="/information"> 
+            <li className='nav-link'>Information</li>
+          </NavLink>
+          <NavLink className="nav" exact to="/"> 
+            <li className='logout-link'>Log out</li>
+          </NavLink>
+        </ul>
+      </div>
+    
+     
+      {/* this is where the hamburger menu starts */}
+    <nav role="navigation">
+      <div id="menuToggle">
+      {/* 
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+        */}
+      <input type="checkbox" />
+      
+      {/* 
+      Some spans to act as a hamburger.
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+        */}
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      {/*    
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic. */} 
+        <ul id="menu">
+          <div className="mobil-menu">
+            <NavLink exact to="/home"> 
+              <li className='mobil-link'>Home</li>
+              <hr style={{width:'70%'}}/>
+            </NavLink>
+            <NavLink exact to="/record"> 
+              <li className='mobil-link'>Record a message</li>
+              <hr style={{width:'70%'}}/>
+            </NavLink>
+            <NavLink exact to="/information"> 
+              <li className='mobil-link'>Information</li>
+              <hr style={{width:'70%'}}/>
+            </NavLink>
+            <NavLink exact to="/"> 
+              <li className='mobil-logout-link'>Log out</li>
+            </NavLink>
+          </div>
+        </ul>
+      </div>
+    </nav>
     </>
   );
 }
-
 export default Navigationbar;
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import {NavLink} from 'react-router-dom'
-// import { FiMenu } from 'react-icons/fi';
-// import { GrClose } from 'react-icons/gr';
-// import './_navigationbar.scss';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-
-// function Navigationbar () {
-
-//   useEffect(() => {
-//     AOS.init({
-//     });
-//   }, []);
-  
-// const [showMenu, setShowMenu] = useState(false);
-
-
-// // toggle hamburgermenu opend/closed and show and hide navbar.
-// let navbar
-// let toggle
-// let menu
-
-
-// if(showMenu === true) {
-
-//   toggle = <div className="close"><GrClose/></div>
-//   // toggle = <div data-aos="fade-right"  data-aos-duration="1500" className="close"><GrClose/></div> 
-  
-//   menu = 
-  
-//     <div className="menu-mobile">
-//         <ul data-aos="fade-up"  data-aos-duration="1000" className="navlinks-hamburger">
-//           <div style={{marginTop:'50px'}}>
-//           <NavLink exact to="/home"> 
-//             <li className='nav-link'>Home</li>
-//           </NavLink>
-//           <NavLink exact to="/record"> 
-//             <li className='nav-link'>Record a message</li>
-//           </NavLink>
-//           <NavLink exact to="/information"> 
-//             <li className='nav-link'>Information</li>
-//           </NavLink>
-//           <NavLink exact to="/"> 
-//             <li style={{marginLeft:"20px"}}className='logout-link'>Log out</li>
-//           </NavLink>
-//           </div>
-//         </ul>
-//     </div>
- 
-// } else {
-
-//   toggle = <FiMenu className="open"/>
- 
-//   navbar =  
-//   <div className="navigationbar-container">
-//   <ul className="navlinks">
-//     <NavLink className="nav" exact to="/home"> 
-//       <li className='nav-link'>Home</li>
-//     </NavLink>
-//     <NavLink className="nav" exact to="/record"> 
-//       <li className='nav-link'>Record a message</li>
-//     </NavLink>
-//     <NavLink className="nav" exact to="/information"> 
-//       <li className='nav-link'>Information</li>
-//     </NavLink>
-//     <NavLink className="nav" exact to="/"> 
-//       <li className='logout-link'>Log out</li>
-//     </NavLink>
-//   </ul>
-// </div>
-   
-// }
-//   return (
-
-//     <>
-//       <nav>
-//       {navbar}
-//         <div 
-//           className="hamburger-menu"
-//           onClick={() => setShowMenu(!showMenu)}>
-//           {toggle}
-//         </div>
-//       {menu}
-//       </nav>
-//     </>
-//   );
-// }
-
-// export default Navigationbar;
-
-
