@@ -1,8 +1,6 @@
 @import '../_variables';
 
-.navigationbar-container{
-  position: -webkit-sticky;
-	position: sticky;
+.navigationbar-container {
 	top: 0;
   background-color: $navbar;
   width: 100%;
@@ -10,139 +8,193 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  z-index: 999;
-    
+  z-index: 1;
 }
 
 .navlinks a{
-    // border: 1px solid blue;
-    position: relative;
-    display: inline-block; 
-    flex: 1;
-    text-align: center;
-    font-family: $fontRoboto;
-    text-decoration: none !important;
-    color:white;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    // font-size: 1.2vw;
-    font-size: 25px;
-
-    transition: transform .3s;
-    margin: 0 1% 0 1%;   
-    margin-top: 0.5%;
+  position: relative;
+  display: inline-block; 
+  flex: 1;
+  text-align: center;
+  font-family: $fontRoboto;
+  text-decoration: none !important;
+  color:white;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 25px;
+  transition: transform .3s;
+  margin: 0 1% 0 1%;   
+  margin-top: 0.5%;
 }
 
 .navlinks a:hover{
-    text-decoration: none !important;
-    transform: scale(1.2);  
-    color:white !important;
+  text-decoration: none !important;
+  transform: scale(1.2);  
+  color:white !important;
 }
 
-.logout-link{
-    color: $text;
-    // font-size: 0.8vw;
-    font-size: 15px;
-    font-weight: 900;
-    letter-spacing: 2px;
+.logout-link {
+  color: $text;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
 
-.hamburger-menu {
-    display: none;
-     font-size: 30px;
-    // margin-left: 30px;
-     margin-top: 15px;
-    
+#menuToggle {
+  display: none;
 }
 
-.menu-mobile {
-    display: none;
-}
-@media only screen and (max-width: 900px) {
-    .navigationbar-container {
+@media screen and (max-width: 850px) {
 
-        // background-color: $navbar;
-        height: 60px;
-        border-bottom: 20px solid white;
-       
-	
-    }
-		.navlinks-hamburger a {
-			// margin-top:100px;
-			margin-left: -20px;
-			list-style: none;
-			width: 100%;
-      text-align: left;
-      font-family: $fontRoboto;
-      text-decoration: none !important;
-      color:white;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-		}
-    a .nav-link:hover, :active {
-      color:white
-    }
-    
-
-    .navlinks {
-      
-        display: none;
-    }
-  
-    .hamburger-menu  {
-      display:flex;
-      position: relative;
-      margin: 25px px 0px 0px;
-      z-index: 999;
-      
-    }
-     .close-container {
-       
-       background-color: #dfe6e5;
-       width: 60px;
-       height: 60px;
-       margin-top: -15px;
-       border-radius: 0px 0px 80px 0px;
-     }
-		.close {
-      // padding:20px;
-      
-      color:#666e6d;
-      z-index: 999;
-      font-size: 30px !important;
-      font-weight: bold;
-      // border-radius: 0px 0px 80px 0px;
-      margin-right: 20px;
-      margin-top: 5px;
-     
-      
-		}
-    .open {
-     
-      color:#666e6d;
-      // color:white;
-      margin-top:-70px;
-      margin-left: 10px;
-    }
-    .menu-mobile {
-      display: flex;
-      position: absolute !important;
-      width: 35%;
-      height: 100vh;
-      background-color:#becccb;
-      margin-top: -90px;
-      // margin-top: -42px;
-      z-index: 2;
-    }
+.navlinks {
+  display: none;
 }
 
-@media only screen and (max-width: 700px) {
-	.menu-mobile {
-		background-color:#becccb;
-		width: 100%;
-	}
-
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -45px;
+  left: 90%;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 50px;
 }
 
+#menuToggle a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
 
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+ 
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top right of the screen
+ */
+#menu {
+  position: fixed;
+  height: 100vh;
+  width: 103%;
+  padding: 10px;
+  padding-top: 50px;
+  top: 50px;
+  margin-left: -92%;
+  flex-direction: column;
+  // this is the bubble-effect before..
+  clip-path: circle(100px at 90% -10%);
+  -webkit-clip-path: circle(100px at 90% -10%);
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+/*
+ * And let's slide it in from the right
+ */
+ #menuToggle input:checked ~ ul {
+
+  // this is the bubble-effect after..
+  clip-path: circle(1200px at 90% -10%);
+  -webkit-clip-path: circle(1200px at 90% -10%);
+  pointer-events: all;
+  margin-top:-50px;
+  background:#638783;
+}
+
+#menu .mobil-menu .mobil-link {
+  padding: 10px 0;
+  margin-top: 6vw;
+  font-size: 22px;
+  font-family: $fontRoboto;
+  text-decoration: none !important;
+  list-style: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.mobil-logout-link {
+  padding: 10px 0;
+  font-size: 19px;
+  color: $text;
+  font-weight: 900;
+  font-family: $fontRoboto;
+  list-style: none;
+  margin-top: 4vw;
+}
+} 
+
+@media screen and (max-width: 550px) {
+
+  #menuToggle {
+    left:80%
+  }
+  #menu {
+    margin-left: -83%;
+    padding-top: 100px;
+  }
+}
 
