@@ -6,6 +6,7 @@ import Home from './components/home/Home';
 import Register from './components/register/Register';
 import Record from './components/record/Record';
 import Information from './components/information/Information';
+import Tracks from './components/audioplayer/Tracks';
 
 import AlertComponent from './components/AlertComponent/AlertComponent';  
 //import RegisterHeader from './components/registerHeader/RegisterHeader';
@@ -33,9 +34,11 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/home" component={Home} />
           <Route path="/information" component={Information} />
+          <Route path="/tracks" component={Tracks} />
+          
           <Route path="/record" component={Record} /> 
           <Route path="/register" component={Register} > 
-
+         
             {/* Hur kan vi få denna till registerComponent */}
             <Register showError={updateErrorMessage} updateTitle={updateTitle}/>  
             <Login showError={updateErrorMessage} updateTitle={updateTitle}/> 
