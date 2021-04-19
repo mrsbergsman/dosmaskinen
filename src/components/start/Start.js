@@ -6,7 +6,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // import Scrollspy from 'react-scrollspy'
 
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import onePill from '../../images/medIconTransp.png';
 import clock from '../../images/clockIconTransp.png';
@@ -78,7 +79,6 @@ function Start() {
         </div>
       </div>
 
-      {/* <div> */}
       <p data-aos="fade-up" data-aos-duration="3000" className="bottom-box2-header">How it works!</p>
         <div data-aos="fade-up" data-aos-duration="3000" className="bottom-box2">
           <div className="section2-box">
@@ -106,11 +106,11 @@ function Start() {
 
               <div data-aos="fade-up" data-aos-duration="3000" className="start-information-bottom2box">
                 <div id="medecine" className="onepill-box">
-                  <div class="row">
-                    <div class="col">
+                  <div className="row">
+                    <div className="col">
                       <img className="start-icons" src={onePill} alt="A pill icon"/>
                     </div>
-                    <div class="col">
+                    <div className="col">
                       <p className="start-icon-header">The medicine list</p>
                       <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et dolore magna aliqua."</p>
@@ -123,11 +123,11 @@ function Start() {
                 </div>
 
                 <div id="setTime" className="clock-box">              
-                  <div class="row">
-                    <div class="col">
+                  <div className="row">
+                    <div className="col">
                       <img className="start-icons" src={clock} alt="A clock icon"/>
                     </div>
-                    <div class="col">
+                    <div className="col">
                       <p className="start-icon-header">Set the time when to take the medicine</p>
                       <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et dolore magna aliqua."</p>
@@ -140,11 +140,11 @@ function Start() {
                 </div>
 
                 <div id="record" className="message-box">
-                  <div class="row">
-                    <div class="col">
+                  <div className="row">
+                    <div className="col">
                       <img className="start-icons" src={message} alt="A message icon"/>
                     </div>
-                    <div class="col">
+                    <div className="col">
                     <p className="start-icon-header">Record a personal message</p>
                     <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et dolore magna aliqua."</p>
