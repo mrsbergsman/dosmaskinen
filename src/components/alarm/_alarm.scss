@@ -3,6 +3,7 @@
 //form-styling
 .form-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   position: relative;
 }
@@ -12,14 +13,12 @@
 .name {
   margin-top: 30px;
   width: 20%;
- 
 }
 .time {
   margin-top: 30px;
   width: 20%;
-
 }
-.notes {
+.voicemail {
   width: 20%;
   margin-top: 30px;
 }
@@ -33,28 +32,47 @@
 .input-felt {
   width: 70%;
   height: 40px;
-  border: 2px solid rgb(143, 143, 143);
+  border: 1px solid #e2dddd;
+  
   border-radius: 7px;
   bottom:0;
-  
+  background-color: white;
 }
 .input-felt:focus  {
   outline: none;
-  border: 2px solid #679e97;
- 
+  border: 1px solid #648783;
 }
+
 // style placholder on every browser
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-size: 18px;
+  font-style: italic;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   font-size: 18px;
+  font-style: italic;
 }
 :-ms-input-placeholder { /* IE 10+ */
   font-size: 18px;
+  font-style: italic;
 }
 :-moz-placeholder { /* Firefox 18- */
   font-size: 18px;
+  font-style: italic;
+}
+
+// styling input clock
+input[type=time]::-webkit-datetime-edit-hour-field {
+  border-radius: 15%;
+  padding: 19px 9px;
+  color:$text;
+}
+
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+  border-radius: 15%;
+  padding: 15px 9px;
+  color:$text;
 }
 
 .add-btn {
@@ -68,33 +86,21 @@
   margin-left: 30px;
   border-radius: 7px;
   border:none;
-  
 }
 
 .add-btn:hover {
   background-color: #638783
 }
 
-// styling  dropdow button
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active , .show > .btn-primary.dropdown-toggle{
-  background-color:#f7f5f1!important;
-}
-
+// dropdown button
 .btn-primary {
   background-color:white !important;
-  border: 2px solid rgb(143, 143, 143) !important;
+  border: 1px solid#e2dddd !important;
   width:70% !important;
   height: 42px !important;
   border-radius: 7px !important;
   box-shadow: none !important;
   margin: 0px 0px 0px !important;
-}
-.btn-primary:hover{
-  background-color:#f7f5f1 !important;
-}
-
-.dropdown-item:focus, .dropdown-item:hover {
-  background-color: #f7f5f1!important;
 }
 
 #dropdown-item-button {
@@ -102,97 +108,270 @@
   font-weight: bold;
 }
 
-// table styling
-#table-container {
-  margin-top:20px;
-  background-color:$bgColor;
+// card styling
+#main-card-container {
+  background-color: $bgColor;
+}
+#card-container {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  flex-wrap: wrap;
+  background-color: $bgColor;
+  width: 70%;
+  margin: 0px auto;
+  margin-top:50px;
+}
+.card-styling {
+  position: relative;
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #e2dddd;
+  width: 250px; //300
+  min-height: 400px;
+  margin-left:20px;
+  margin-top: 20px;
+  list-style: none;
+  box-shadow: 10px 10px 12px -6px rgba(59,54,54,0.75);
+  -webkit-box-shadow: 10px 10px 12px -6px rgba(59,54,54,0.75);
+  -moz-box-shadow: 10px 10px 12px -6px rgba(59,54,54,0.75);
 }
 
-#info {
-  text-align: center;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  border: 3px solid #ddd;
+.quarter-clock {
   width: 80%;
-  margin:auto 0px;
-  background-color: #becccb;
-  box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 19px -10px rgba(0,0,0,0.75);
+  border-radius: 0px 0px 0px 10px;
+  opacity: 0.2;
 }
 
-#info td, #info th {
-  border: 3px solid #f7f5f1;
-  padding: 8px;
-}
-
-.row-title {
+.card-time {
+  display: flex;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: center;
+  font-family: $fontNumber;
+  background-color:#a5bdba;
+  margin-left: -40px;
+  font-size: 30px;
   color:$text;
-  font-size: 17px;
-  word-spacing: 100vw;
-  width: 35%;
+  height: 50px;
+}
+.time-style {
+ margin-left: 15px;
+}
+
+.card-img {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0px;
+  margin-left: -40px;
+}
+.medicine {
+  display: flex;
+  margin-top: 10px;
+  // justify-content:center;
+  margin-left: 0px;
+  color:$text;
+  font-size: 20px;
+  font-family: $fontNumber;
   font-weight: bold;
+}
+.card-message {
+  display: flex;
+  justify-content:center;
+  margin-left: -40px;
+  color:$text;
+  font-size: 20px;
+  font-family: $fontNumber;
+  font-weight: bold;
+  background-color: #d5e2e1;
+  height: 35px;
+}
+
+.message-style {
+  font-weight:bolder;
+  margin-left: 5px;
+}
+
+.card-title {
+  display: flex;
   text-align: left;
-  text-transform:capitalize;
-  font-family: $fontRoboto;
-}
-.row-message {
   color:$text;
-  font-size: 17px;
-  font-family: $fontRoboto;
+  word-spacing: 100vw;
+  margin-left: 0px;
+  font-size: 20px;
   font-weight: bold;
   text-transform:capitalize;
-  width: 35%;
-}
-.row-time{
-  color:$text;
-  font-size: 17px;
-  font-family: $fontRoboto;
-  font-weight: bold;
-  width: 15%;
-  letter-spacing: 2px;
+  font-family: $fontNumber;
+  border-radius: 10px;
 }
 
- //make every other row in a different color
-#info tr:nth-child(even){background-color:#ecdedf;}
-
-#info tr:hover {
-  background-color:#f3efeb;
-
+.delete-card {
+  font-size: 45px;
+  color:#dc3644;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 200px;
+}
+.delete-card:hover {
+  color:#bd2130;
+  margin-top: 0;
+}
+.edit-card {
+  color:#78aea9;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 160px;
+  font-size: 40px;
 }
 
-#info th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color:$headerColor;
-  color: white;
-}
-.icon-delete {
-  width: 15%;
+.edit-card:hover {
+  color: #638783;
 }
 
-.icon-delete:hover{
-  filter: grayscale(50%);
+@media screen and (max-width: 1351px) {
+  .name {
+    width:33%;
+  }
+  .time {
+    width: 33%;
+  }
+  .voicemail {
+    width: 33%;
+  }
+  .add-btn {
+    position: absolute;
+    bottom: -50px;
+    width: 80px;
+    height: 30px;
+    margin-left:-120px;
+    font-size: 15px;
+  }
+  #card-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px){
+
+  .form-container {
+    flex-direction: column;
+  }
+  .name {
+    display:flex;
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #e2dddd;
+    margin:10px auto;
+    box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+  }
+  .voicemail {
+    display:flex;
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #e2dddd;
+    margin:10px auto;
+    box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+  }
+  .time {
+    display:flex;
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #e2dddd;
+    margin:10px auto;
+    box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+  }
+  .icon-settings {
+    width: 190px;
+    height: auto;
+    margin-left:40px;
+  }
+  .text-container {
+    margin-top: 50px;
+    width: 95%;
+  }
+
+  .icon-container {
+     width: 30%;
+  }
+  .input-felt {
+   border: 1px solid #e2dddd;
+   margin-top: 10px;
+   box-shadow: 10px 10px 14px -6px rgba(166,163,163,0.75);
+  -webkit-box-shadow: 10px 10px 14px -6px rgba(166,163,163,0.75);
+   -moz-box-shadow: 10px 10px 14px -6px rgba(166,163,163,0.75);
+  }
+  .btn-primary {
+    border: 1px solid #e2dddd !important;
+  }
+  #dropdown-item-button {
+    background-color: white;
+    margin-top: 10px;
+
+  }
+  .btn-primary:hover{
+    background-color:white !important;
+  }
+  
+  .dropdown-item:focus, .dropdown-item:hover {
+    background-color: white!important;
+  }
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active , .show > .btn-primary.dropdown-toggle{
+    background-color:white!important;
+   
+  }
+  .add-btn {
+    display:flex;
+    width:20%;
+    height: 35px;
+    padding: 7px;
+    justify-content: center;
+    border-radius: 7px;
+    margin-left:25px;
+    box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 16px -11px rgba(0,0,0,0.75);
+  }
 }
 
-// #appt:focus {
-//   //background-color: #f7f5f1;
-// }
-input[type=time]::-webkit-datetime-edit-hour-field {
- // background-color: #f2f4f5;
-  border-radius: 15%;
-  padding: 19px 9px;
-  color:$text;
-}
+@media screen and (max-width:490px){
+  .form-container {
+   background-color: white;
+  }
+  .icon-container {
+    position: relative;
+    opacity: 0.3;
+  }
+  .text-container {
+    z-index: 0;
+  }
 
-/* Minute */
-input[type=time]::-webkit-datetime-edit-minute-field {
-  //background-color: #f2f4f5;
-  border-radius: 15%;
-  padding: 15px 9px;
-  color:$text;
-}
+  }
+
+  @media screen and (max-width:350px){
+    .icon-container {
+      opacity: 0.2;
+    }
+     .text-container {
+       width:99%;
+     }
+     .icon-container {
+      width:1%;
+     }
+     #card-container {
+       background-color: white;
+     }
+     .card-styling{
+       margin: 0px auto;
+     }
+     .card-styling {
+      margin-top: 20px;
+    }
+  }
+

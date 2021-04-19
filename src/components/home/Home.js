@@ -16,7 +16,7 @@ function Home () {
           <Alarm/>
           {/* <MedicineList/> */}
         </div>
-        <Footer/> 
+        {/* <Footer/>  */}
     </>
   );
 }
