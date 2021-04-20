@@ -32,7 +32,7 @@ import alarm2 from '../../sounds/alarm2.mp3';
 
         <div>          
           {playlist.map(listItem => (
-            <p onSelect={handleSelectSound} key={listItem.id} > {sound}  {listItem.soundName}</p>
+            <p onSelect={handleSelectSound} key={listItem.id}> {sound}  {listItem.soundName}</p>
           ))}
         </div>
       </div>
