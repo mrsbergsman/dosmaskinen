@@ -145,9 +145,8 @@ class Alarm extends Component {
               value={this.state.title}
               onChange={this.updateTitle.bind(this)}
             />
-           </div>
-          </div> 
-
+            </div>
+            </div> 
           <div className="voicemail">
             <div className="icon-container">
               <img className="icon-settings" src={voiceMailTransp} alt="letter"/>
@@ -156,9 +155,8 @@ class Alarm extends Component {
               <h3 className="h3">MESSAGE</h3>
               <p className="paragraph">Add your message</p>
               <DropdownButton id="dropdown-item-button" title="MESSAGE">
-             
               <Dropdown.Item
-                 className="dropdown-list-style"
+                className="dropdown-list-style"
                 as="button" 
                 value="Raindrops" 
                 onClick={this.updateMessage.bind(this)}>
@@ -174,7 +172,7 @@ class Alarm extends Component {
                 />
                 </Dropdown.Item>
               <Dropdown.Item
-               className="dropdown-list-style2" 
+                className="dropdown-list-style2" 
                 as="button" 
                 value="Guitar music" 
                 onClick={this.updateMessage.bind(this)}>
@@ -190,7 +188,7 @@ class Alarm extends Component {
                 />
                 </Dropdown.Item>
               <Dropdown.Item
-               className="dropdown-list-style" 
+                className="dropdown-list-style" 
                 as="button" 
                 value="Xylophone" 
                 onClick={this.updateMessage.bind(this)}>
@@ -206,7 +204,7 @@ class Alarm extends Component {
                 />
               </Dropdown.Item>
               <Dropdown.Item
-              className="dropdown-list-style2"  
+                className="dropdown-list-style2"  
                 as="button" 
                 value="Polyphonic ringtone" 
                 onClick={this.updateMessage.bind(this)}>
@@ -219,9 +217,9 @@ class Alarm extends Component {
                 controls={true}
                 preload="none"
                 className="player"
-                />
-                </Dropdown.Item>
-                <Dropdown.Item
+              />
+              </Dropdown.Item>
+              <Dropdown.Item
                 className="dropdown-list-style"  
                 as="button" 
                 value="Fanfare" 
@@ -235,9 +233,9 @@ class Alarm extends Component {
                 controls={true}
                 preload="none"
                 className="player"
-                />
-                </Dropdown.Item>
-                <Dropdown.Item 
+              />
+              </Dropdown.Item>
+              <Dropdown.Item 
                 className="dropdown-list-style2" 
                 as="button" 
                 value="Intense alarm clock" 
@@ -251,9 +249,9 @@ class Alarm extends Component {
                 controls={true}
                 preload="none"
                 className="player"
-                />
-                </Dropdown.Item>
-              </DropdownButton>
+              />
+              </Dropdown.Item>
+            </DropdownButton>
             </div>
           </div>
          <div>
