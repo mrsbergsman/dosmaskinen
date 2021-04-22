@@ -108,6 +108,24 @@ input[type=time]::-webkit-datetime-edit-minute-field {
   font-weight: bold;
 }
 
+audio {
+  outline: none;
+}
+.dropdown-list-style {
+  border-bottom: 1px solid lightgrey !important;
+ padding-bottom: 10px !important;
+ 
+}
+.dropdown-list-style:hover, .dropdown-list-style2:hover {
+  background-color:#eee !important;
+}
+.dropdown-list-style2 {
+  border-bottom: 1px solid lightgrey !important;
+  padding-bottom: 10px !important;
+  
+  
+}
+
 // card styling
 #main-card-container {
   background-color: $bgColor;

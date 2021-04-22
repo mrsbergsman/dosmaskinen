@@ -6,9 +6,15 @@ import clockIconTransp from '../../images/clockIconTransp.png';
 import voiceMailTransp from '../../images/voiceMailTransp.png';
 import quarterClock from '../../images/quarterClock.png';  
 import './_alarm.scss'; 
-import {MdKeyboardVoice} from 'react-icons/md'
 import {MdDeleteForever} from 'react-icons/md';
 import {MdModeEdit} from 'react-icons/md';
+import ReactPlayer from "react-player";
+import alarm from '../../sounds/alarm.mp3';
+import alarm2 from '../../sounds/alarm2.mp3';
+import alarm3 from '../../sounds/alarm3.mp3';
+import alarm4 from '../../sounds/alarm4.mp3';
+import alarm5 from '../../sounds/alarm5.mp3';
+import alarm6 from '../../sounds/alarm6.mp3';
 
 class Alarm extends Component {
   constructor(props) {
@@ -88,17 +94,16 @@ class Alarm extends Component {
                   <p className="medicine">Medicine:</p>
                   {/* <hr style={{marginLeft:'-40px'}}/> */}
                   <li className="card-title">{title} </li>
-                <div className="card-img">
-                    <img className="quarter-clock" src={quarterClock}/>
-                    <MdModeEdit
-                      className="edit-card"
-                    />
-                    <MdDeleteForever 
-                    className="delete-card"
-                    onClick={context.handleItemDeleted.bind(context, i)}
-                    />
-                   
-                </div>
+                  <div className="card-img">
+                      <img className="quarter-clock" src={quarterClock}/>
+                      <MdModeEdit
+                        className="edit-card"
+                      />
+                      <MdDeleteForever 
+                      className="delete-card"
+                      onClick={context.handleItemDeleted.bind(context, i)}
+                      />
+                  </div>
                 </ul>
             );
         });
@@ -151,17 +156,102 @@ class Alarm extends Component {
               <h3 className="h3">MESSAGE</h3>
               <p className="paragraph">Add your message</p>
               <DropdownButton id="dropdown-item-button" title="MESSAGE">
-              <Dropdown.Item as="button" value="My personal message" onClick={this.updateMessage.bind(this)}>My personal message</Dropdown.Item>
-              <Dropdown.Item as="button" value="Birdsong" onClick={this.updateMessage.bind(this)}>Birdsong</Dropdown.Item>
-              <Dropdown.Item as="button" value="Default alarm" onClick={this.updateMessage.bind(this)}>Default alarm</Dropdown.Item>
-              <hr/>
-              <Dropdown.Item as="button">
-                Record new message 
-                  <MdKeyboardVoice style={{ 
-                    color:':#4d4d4d',
-                    fontSize:'20px',
-                    marginLeft:'10px'
-                }}/>
+             
+              <Dropdown.Item
+                 className="dropdown-list-style"
+                as="button" 
+                value="Raindrops" 
+                onClick={this.updateMessage.bind(this)}>
+                Raindrops
+                <ReactPlayer
+                url={alarm}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
+                </Dropdown.Item>
+              <Dropdown.Item
+               className="dropdown-list-style2" 
+                as="button" 
+                value="Guitar music" 
+                onClick={this.updateMessage.bind(this)}>
+                Guitar music
+                <ReactPlayer
+                url={alarm2}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
+                </Dropdown.Item>
+              <Dropdown.Item
+               className="dropdown-list-style" 
+                as="button" 
+                value="Xylophone" 
+                onClick={this.updateMessage.bind(this)}>
+                Xylophone
+                <ReactPlayer
+                url={alarm3}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
+              </Dropdown.Item>
+              <Dropdown.Item
+              className="dropdown-list-style2"  
+                as="button" 
+                value="Polyphonic ringtone" 
+                onClick={this.updateMessage.bind(this)}>
+                Polyphonic ringtone
+                <ReactPlayer
+                url={alarm4}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
+                </Dropdown.Item>
+                <Dropdown.Item
+                className="dropdown-list-style"  
+                as="button" 
+                value="Fanfare" 
+                onClick={this.updateMessage.bind(this)}>
+                Fanfare
+                <ReactPlayer
+                url={alarm5}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
+                </Dropdown.Item>
+                <Dropdown.Item 
+                className="dropdown-list-style2" 
+                as="button" 
+                value="Intense alarm clock" 
+                onClick={this.updateMessage.bind(this)}>
+                Intense alarm clock
+                <ReactPlayer
+                url={alarm6}
+                width="200px"
+                height="30px"
+                playing={false}
+                controls={true}
+                preload="none"
+                className="player"
+                />
                 </Dropdown.Item>
               </DropdownButton>
             </div>
@@ -182,9 +272,11 @@ class Alarm extends Component {
             {this.renderRows()}
           </div>
         </div>
+        
       </div>
     );
   }
 }
 export default Alarm;
+
 
