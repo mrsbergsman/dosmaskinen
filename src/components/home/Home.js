@@ -16,6 +16,7 @@ function Home () {
           <Alarm/>
         </div>
         {/* <Footer/>  */}
+        
     </>
   );
 }
