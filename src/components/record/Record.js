@@ -6,16 +6,20 @@ import Navigationbar from '../navbar/Navigationbar';
 
 
 function Record () {
+  
   return (
     <>
       <Header/>
       <Navigationbar/>
-        <div className="record-container">
-          Detta är Recordkomponenten
-        </div>
-        <Footer/> 
-    </>
-  );
-}
+        <div className="record-container">        
+Detta är Recordkomponenten
+         </div>
+         <Footer/> 
+     </>
+   );
+ }
 
-export default Record;
+ export default Record;
+
+
+
