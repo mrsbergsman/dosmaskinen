@@ -33,21 +33,21 @@ class Alarm extends Component {
   updateMessage(event) {
     this.setState({
       message: event.target.value
-    },() => console.log('detta är message', this.state.message));
+    });
   }
 
    //event handler to update the title
   updateTitle(event) {
     this.setState({
       title: event.target.value
-    },() => console.log('detta är title', this.state.title));
+    });
   }
 
   // event handler to update the time
   updateTime(event){
     this.setState({
       time: event.target.value
-    },() => console.log('detta är tiden', this.state.time))
+    })
 
   }
 
@@ -92,7 +92,6 @@ class Alarm extends Component {
                   <li className="card-time"><p>Time:</p><b className="time-style">{time}</b></li>
                   <li className="card-message"><p>Alarm:</p><b className="message-style">{message}</b></li>
                   <p className="medicine">Medicine:</p>
-                  {/* <hr style={{marginLeft:'-40px'}}/> */}
                   <li className="card-title">{title} </li>
                   <div className="card-img">
                       <img className="quarter-clock" src={quarterClock}/>
