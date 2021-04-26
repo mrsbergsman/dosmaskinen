@@ -13,7 +13,7 @@ import onePill from '../../images/medIconTransp.png';
 import clock from '../../images/clockIconTransp.png';
 import message from '../../images/voiceMailTransp.png';
 import info from '../../images/infoGreenTransp.png';
-import video from '../../video/medi.mp4';
+import video from '../../video/medi1.mp4';
 
 function Start() {
 

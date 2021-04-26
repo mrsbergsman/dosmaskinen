@@ -6,8 +6,8 @@ import Record from './components/record/Record';
 import Information from './components/information/Information';
 import {BrowserRouter as Router, Switch, Route} from'react-router-dom';
 function App() {
-  
-return (
+
+  return (
     <Router>
       <div className="App">
         <Switch>
