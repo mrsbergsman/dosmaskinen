@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import {MdDeleteForever} from 'react-icons/md';
+import {MdModeEdit} from 'react-icons/md';
+import ReactPlayer from "react-player";
+import './_alarm.scss'; 
 import medIconTransp from '../../images/medIconTransp.png';
 import clockIconTransp from '../../images/clockIconTransp.png';
 import voiceMailTransp from '../../images/voiceMailTransp.png';
 import quarterClock from '../../images/quarterClock.png';  
-import './_alarm.scss'; 
-import {MdDeleteForever} from 'react-icons/md';
-import {MdModeEdit} from 'react-icons/md';
-import ReactPlayer from "react-player";
 import alarm from '../../sounds/alarm.mp3';
 import alarm2 from '../../sounds/alarm2.mp3';
 import alarm3 from '../../sounds/alarm3.mp3';
 import alarm4 from '../../sounds/alarm4.mp3';
 import alarm5 from '../../sounds/alarm5.mp3';
 import alarm6 from '../../sounds/alarm6.mp3';
+
 
 class Alarm extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Alarm extends Component {
       title:'',
       time:'',
       items: [],
-      
+      errormsg:''     
     }
   }
  
@@ -48,11 +49,23 @@ class Alarm extends Component {
     this.setState({
       time: event.target.value
     })
-
   }
 
-  //push voicemail,title and time in to items
   handleClick() {
+
+   // Handles error messages. checks that all input fields are filled
+    if(this.state.message===''||this.state.time==='' ||this.state.title===''){
+  
+    this.setState({
+    errormsg:<p className="error">Please fill in all the fields and try again</p>
+  })
+  }
+    else {
+    this.setState({
+      errormsg:'',
+    })
+
+    //push voicemail,title and time in to items if input fields are filled
     let items = [...this.state.items];
     items.push({
       message: this.state.message,
@@ -68,7 +81,7 @@ class Alarm extends Component {
       time:""
     });
   }
-
+}
 
   //make a clone to update the new list of items.
   //delete one index (obj)
@@ -112,6 +125,7 @@ class Alarm extends Component {
   render() {
     return (
       <div className="alarmForm-container">
+        {this.state.errormsg}
         <div className="form-container">
         <div className="time">
           <div className="icon-container">
@@ -130,6 +144,7 @@ class Alarm extends Component {
             />
             </div> 
           </div>
+          
           <div className="name">
             <div className="icon-container">
             <img className="icon-settings" src={medIconTransp} alt="pill"/>
@@ -151,9 +166,9 @@ class Alarm extends Component {
               <img className="icon-settings" src={voiceMailTransp} alt="letter"/>
             </div>
             <div className="text-container">
-              <h3 className="h3">MESSAGE</h3>
-              <p className="paragraph">Add your message</p>
-              <DropdownButton id="dropdown-item-button" title="MESSAGE">
+              <h3 className="h3">ALARM</h3>
+              <p className="paragraph">Choose your alarm sound</p>
+              <DropdownButton id="dropdown-item-button" title="ALARM">
               <Dropdown.Item
                 className="dropdown-list-style"
                 as="button" 
@@ -253,7 +268,7 @@ class Alarm extends Component {
             </DropdownButton>
             </div>
           </div>
-         <div>
+          <div>
           <button
             className="add-btn"
             onClick={this.handleClick.bind(this)}
@@ -269,7 +284,6 @@ class Alarm extends Component {
             {this.renderRows()}
           </div>
         </div>
-        
       </div>
     );
   }
