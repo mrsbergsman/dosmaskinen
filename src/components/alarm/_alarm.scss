@@ -42,6 +42,20 @@
   outline: none;
   border: 1px solid #648783;
 }
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #721c24;
+  background-color: #f8d7da;
+  width: 100%;
+  margin:auto;
+  height: 50px;
+  border:1px solid #f5c6cb;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
 
 // style placholder on every browser
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -267,6 +281,11 @@ audio {
     width: 100%;
   }
 }
+@media screen and (max-width: 850px){
+  .error {
+    margin-top:-28px
+  }
+}
 @media screen and (max-width: 700px){
 
   .form-container {
@@ -390,6 +409,10 @@ audio {
      }
      .card-styling {
       margin-top: 20px;
+    }
+    .error {
+      font-size: 12px;
+      font-weight: bold;
     }
   }
 
