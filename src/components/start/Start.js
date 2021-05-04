@@ -98,7 +98,7 @@ function Start() {
                   </li>
                   <li className="scroll-link-listItem">
                   <Link className="scrollink" to="record" spy={true} smooth={true} offset={50} duration={500} >
-                    Record a personal message 
+                    Choose alarm sound 
                   </Link> 
                   </li>
                 </ul>
@@ -145,7 +145,7 @@ function Start() {
                       <img className="start-icons" src={message} alt="A message icon"/>
                     </div>
                     <div className="col">
-                    <p className="start-icon-header">Record a personal message</p>
+                    <p className="start-icon-header">Choose your alarm sound</p>
                     <p className="start-icon-underText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt ut labore et dolore magna aliqua."</p>
                       <p className="start-icon-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
