@@ -1,0 +1,37 @@
+@import '../_variables';
+.user-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 29px;
+    justify-content: center;
+    align-content: center;
+    background-color: $bgColor;
+    width: 100%;
+    // this is necessary for the hamburgermenu 
+    //not to look funny when its opend
+    position: relative;
+    z-index: 3;
+}
+
+.user-info {
+    display: flex;
+}
+
+.logout {
+    font-family: $fontRoboto;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-left: 10px;
+    color: #8fad8c;
+}
+
+.logout:hover {
+    font-family: $fontRoboto;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 14px, ;
+    padding-top: 10px;
+    color: #8fad8c;
+}

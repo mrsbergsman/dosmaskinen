@@ -1,24 +1,53 @@
 import React from 'react';
+import {Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, Bounce } from 'react-toastify';
 import './App.scss';
 import Start from './components/start/Start';
 import Home from './components/home/Home';
+import LoginPage from './pages/loginpage.component';
+import RegisterPage from './pages/registerpage.component';
 import Record from './components/record/Record';
 import Information from './components/information/Information';
-import {BrowserRouter as Router, Switch, Route} from'react-router-dom';
-function App() {
+import UserInfo from './components/registerHeader/userInfo';
+import Spinner from './components/spinner/spinnerComponent';
+import { logoutUser } from './redux/actions/authActionCreators';
+
+const App = ({user, dispatchLogoutAction}) =>{
 
   return (
-    <Router>
+    <>
+      <ToastContainer position="top-center" autoClose={2000}
+        hideProgressBar transition={Bounce }/>
+      <Spinner/>
+      <UserInfo isLoggedIn={user.isLoggedIn} userName={user.fullName} onLogout={dispatchLogoutAction}/>
       <div className="App">
-        <Switch>
-          <Route path="/" exact component={Start} />
-          <Route path="/start" exact component={Start} />
-          <Route path="/home" component={Home} />
-          <Route path="/information" component={Information} />
-          <Route path="/record" component={Record} /> 
-        </Switch>
-      </div>
-    </Router>
+        {!user.isLoggedIn ?
+          (<Switch>
+            <Route exact path="/start" component={Start} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/register" component={RegisterPage} /> 
+            <Redirect to="/start" />
+          </Switch>) :
+          (<Switch>
+            <Route exact path="/home" component={Home} />
+            {/* <Route exact path="/tracks" component={Player} /> */}
+            <Route exact path="/information" component={Information} />
+            <Route exact path="/record" component={Record} /> 
+            {/* <Route exact path="/edit-post" component={EditPostPage}/>
+            <Route exact path="/edit-post/:postId" component={EditPostPage}/>
+            <Route exact path="/posts" component={PostPage}/> */}
+            <Redirect to="/home" />
+          </Switch>)
+        }
+        </div>
+    </>
   );
-}
-export default App;
+};
+
+const mapStateToProps = (state) => ({ user: state.user });
+const mapDispatchToProps = (dispatch) => ({
+  dispatchLogoutAction: () => dispatch(logoutUser())
+});
+export default connect(mapStateToProps,mapDispatchToProps)(App);
