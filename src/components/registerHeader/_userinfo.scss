@@ -1,11 +1,13 @@
 @import '../_variables';
 .user-container {
+    //border: 2px solid red;
     display: flex;
     margin: 0;
     padding: 0;
-    height: 29px;
-    justify-content: center;
-    align-content: center;
+    height: auto;
+    justify-content: end;
+    align-content: flex-end;
+    //float: right;
     background-color: $bgColor;
     width: 100%;
     // this is necessary for the hamburgermenu 
@@ -14,24 +16,56 @@
     z-index: 3;
 }
 
+.user-badge {
+    //border: 3px solid greenyellow;
+    font-family: $fontRoboto;
+    background-color: $bgColor;
+}
+
 .user-info {
-    display: flex;
+    //border: 3px dotted rgb(181, 16, 247);
+    float: right;
+    color: $headerColor;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: $fontRoboto;
+    padding-top: 10px;
+    padding-right: 30px;
+    // position: relative;
+    // z-index: -1;
 }
 
 .logout {
+    //border: 3px solid rgb(4, 41, 248);
     font-family: $fontRoboto;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1px;
     font-size: 16px;
-    padding-top: 8px;
-    padding-left: 10px;
-    color: #8fad8c;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 30px;
+    color: $text;
 }
 
 .logout:hover {
-    font-family: $fontRoboto;
-    font-weight: normal;
+    // font-family: $fontRoboto;
+    // font-weight: normal;
     text-decoration: none;
-    font-size: 14px, ;
-    padding-top: 10px;
-    color: #8fad8c;
+    // font-size: 16px, ;
+    // padding-top: 30px;
+    color: rgb(161, 161, 161);
+}
+
+@media only screen and (max-width: 900px) {
+    .logo {
+        text-align: center;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .logo {
+        font-size: 22px;
+        padding: 25px;
+    }
 }

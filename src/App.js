@@ -18,7 +18,7 @@ const App = ({user, dispatchLogoutAction}) =>{
 
   return (
     <>
-      <ToastContainer position="top-center" autoClose={2000}
+      <ToastContainer position="top-center" autoClose={4000}
         hideProgressBar transition={Bounce }/>
       <Spinner/>
       <UserInfo isLoggedIn={user.isLoggedIn} userName={user.fullName} onLogout={dispatchLogoutAction}/>

@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import './_userinfo.scss'
 
-const UserInfo = ({ userName, isLoggedIn, onLogout }) => (
-    <>
-      <div className="user-container">
-        <div className="user-info">
-          {isLoggedIn && <h4 className="ml-auto-mr-4">
-            <span className="badge badge-pill badge-light">
-              Welcome {userName}!
+const UserInfo = ({isLoggedIn,userName, onLogout}) => (
+  <>
+    <div className="user-container">
+        {isLoggedIn && <p className="user-info">
+            <span className="user-badge">
+            Welcome {userName}!
             </span>
-          </h4>}
-          {isLoggedIn && <Link type="link" onClick={onLogout} className="logout" >
-          logout </Link>}
-        </div>
+            {isLoggedIn && <Link type="link" onClick={onLogout} className="logout" >
+            logout  </Link>}
+          </p>}
       </div>
     </>
 );
