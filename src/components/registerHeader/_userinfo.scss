@@ -1,71 +1,101 @@
+
 @import '../_variables';
+.user-wrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   background-color: $bgColor;
+   position: relative;
+   z-index: 3;
+}
+ 
 .user-container {
-    //border: 2px solid red;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    justify-content: end;
-    align-content: flex-end;
-    //float: right;
-    background-color: $bgColor;
-    width: 100%;
-    // this is necessary for the hamburgermenu 
-    //not to look funny when its opend
-    position: relative;
-    z-index: 3;
+   display: flex;
+   justify-content: center;
+   margin: 0;
+   padding: 0;
+   height: auto;
+   background-color: $bgColor;
+   width:fit-content;
+   //position and z-index is necessary for the hamburgermenu
+   //not to look funny when its opend
+   position: relative;
+   z-index: 3;
 }
-
+ .logo {
+   margin-top: 0px;
+   font-family: $fontRoboto;
+   color: $headerColor;
+   letter-spacing: 4px;
+   font-size: 30px;
+   text-align: left;
+   margin-left: 7%;
+   padding: 20px;
+}
 .user-badge {
-    //border: 3px solid greenyellow;
-    font-family: $fontRoboto;
-    background-color: $bgColor;
+   font-family: $fontRoboto;
+   background-color: $bgColor;
+   text-align: center;
 }
-
+ 
 .user-info {
-    //border: 3px dotted rgb(181, 16, 247);
-    float: right;
-    color: $headerColor;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: $fontRoboto;
-    padding-top: 10px;
-    padding-right: 30px;
-    // position: relative;
-    // z-index: -1;
+   float: right;
+   color: $headerColor;
+   text-transform: uppercase;
+   font-size: 18px;
+   font-family: $fontRoboto;
+   padding-top: 10px;
+   padding-right: 30px;
+   position: relative;
+   z-index: -1;
 }
-
+ 
 .logout {
-    //border: 3px solid rgb(4, 41, 248);
-    font-family: $fontRoboto;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 16px;
-    padding-top: 30px;
-    padding-left: 25px;
-    padding-right: 30px;
-    color: $text;
+   font-family: $fontRoboto;
+   font-weight: 600;
+   letter-spacing: 1px;
+   font-size: 16px;
+   padding-top: 30px;
+   padding-left: 25px;
+   padding-right: 30px;
+   color: $text;
 }
-
+ 
 .logout:hover {
-    // font-family: $fontRoboto;
-    // font-weight: normal;
-    text-decoration: none;
-    // font-size: 16px, ;
-    // padding-top: 30px;
-    color: rgb(161, 161, 161);
+   text-decoration: none;
+   color: rgb(161, 161, 161);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
+    .logout{
+    font-size: 12px;
+    }
     .logo {
-        text-align: center;
-        margin-left: 0px;
+    margin-left: 0%;
+    font-size: 22px; 
+    }
+    .user-info {
+    padding-right: 0px;
+    font-size: 17px;
+    }
+ }
+
+@media only screen and (max-width: 650px) {
+    .user-wrapper  {
+    flex-direction: column-reverse;
+    }
+    .logo {
+    padding:0px;
+    margin-bottom: 7px;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .logo {
-        font-size: 22px;
-        padding: 25px;
+ @media only screen and (max-width: 350px) {
+    .logout{
+    font-size: 12px;
+    }
+    .user-info {
+    font-size: 12px;
     }
 }

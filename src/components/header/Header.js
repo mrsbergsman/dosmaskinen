@@ -6,11 +6,11 @@ import './_header.scss'
 const Header = ()=>{
   return (
     <>
-      <div className="header-container">
+      {/* <div className="header-container">
         <div className="logo-box">
           <p className="logo">MedicMinder</p>
         </div>
-      </div>
+      </div> */}
       <UserInfo/>
     </>
   )
