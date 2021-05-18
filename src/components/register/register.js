@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import './_register.scss'
-
 import { registerUser } from '../../redux/actions/authActionCreators';
+
 const Register = ({dispatchRegisterAction}) => {
 
   const [firstName, setFirstName] = useState('');
@@ -22,15 +22,15 @@ const Register = ({dispatchRegisterAction}) => {
     (message) => toast.error(`Error: ${message}`));
   };
 
-  const handleCancelForm = (e) => {
-    e.preventDefault();
-    setFirstName('');
-    setLastName('');
-    setMobilNr('');
-    setEmail('');
-    setPassword('');
+  // const handleCancelForm = (e) => {
+  //   e.preventDefault();
+  //   setFirstName('');
+  //   setLastName('');
+  //   setMobilNr('');
+  //   setEmail('');
+  //   setPassword('');
     // setError({ firstName: false, lastName: false, mobilnr:false, email: false, password: false });
-  };
+  //};
 
   // const isFormInvalid = () => (!firstName || !lastName ||!mobilnr || !email || !password);
 
@@ -57,63 +57,63 @@ const Register = ({dispatchRegisterAction}) => {
         <br />
           <form noValidate onSubmit={handleOnSubmit}>
             <div className="form-group text-left">
-            <label htmlFor="firstName">Firstname</label>
+            <label htmlFor="firstName">Firstname:</label>
             <input noValidate id="firstName"
             type="text"
             name="firstName"
-            placeholder="Firstname"
+            placeholder="Firstname..."
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             className="form-control" />
         </div>
       <div className="form-group text-left">
-        <label htmlFor="lastName">Lastname</label>
-        <input noValidate id="lastName"
+        <label htmlFor="lastName">Lastname:</label>
+        <input noValidate id="LastName"
           type="text"
           name="lastName"
-          placeholder="LastName"
+          placeholder="Lastname..."
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           className="form-control" />
             </div>
             <div className="form-group text-left">
-        <label htmlFor="mobilNr">Mobilnummer</label>
+        <label htmlFor="mobilNr">Mobile phone number:</label>
         <input noValidate id="mobilnr"
           type="mobilnr"
           name="mobilnr"
-          placeholder="Mobilnummer"
+          placeholder="Phone number..."
           value={mobilnr}
           onChange={(e) => setMobilNr(e.target.value)}
           className="form-control" />
       </div>
         <div className="form-group text-left">
-        <label htmlFor="email1">Email Address</label>
+        <label htmlFor="email1">Email address:</label>
         <input noValidate id="email1"
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="Email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="form-control" />
       </div>
         <div className="form-group text-left">
-          <label htmlFor="password1">Password</label>
+          <label htmlFor="password1">Password:</label>
           <input noValidate id="password1"
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Password..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="form-control" />
             </div>
-            <button type="submit" className="btn btn-dark mr-2">Register </button>
+            <button type="submit" className="register-btn">Register </button>
             <NavLink className="cancel"exact to="/">
-            <button className="btn btn-dark mr-2"> 
+            <button className="cancel-btn"> 
               Cancel  </button></NavLink>
           </form>
+          {/* <br />
           <br />
-          <br />
-          <br />
+          <br /> */}
         </div>
       </div>
     </>

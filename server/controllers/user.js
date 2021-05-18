@@ -23,10 +23,10 @@ exports.login = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user)
-        return res.status(403).json({ error: { message: 'invalid email/password' } });
+        return res.status(403).json({ error: { message: 'Invalid email/password' } });
     const isValid = await user.isPasswordValid(password);
     if (!isValid)
-        return res.status(403).json({ error: { message: 'invalid email/password' } });
+        return res.status(403).json({ error: { message: 'Invalid email/password' } });
     const token = getSignedToken(user);
     res.status(200).json({ token });
 };

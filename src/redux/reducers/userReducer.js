@@ -4,7 +4,7 @@ const defaultState = {
   userId: null,
   fullName: null,
   token: null,
-  isLoggedIn: false
+  isLoggedIn: false,
 };
 const userInfo = localStorage.getItem('USER_INFO');
 const INITIAL_STATE = userInfo ? JSON.parse(userInfo) : defaultState;

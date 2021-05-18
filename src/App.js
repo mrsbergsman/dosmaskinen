@@ -8,7 +8,7 @@ import Start from './components/start/Start';
 import Home from './components/home/Home';
 import LoginPage from './pages/loginpage.component';
 import RegisterPage from './pages/registerpage.component';
-import Record from './components/record/Record';
+import Profile from './components/profile/Profile';
 import Information from './components/information/Information';
 import UserInfo from './components/registerHeader/userInfo';
 import Spinner from './components/spinner/spinnerComponent';
@@ -34,7 +34,7 @@ const App = ({user, dispatchLogoutAction}) =>{
             <Route exact path="/home" component={Home} />
             {/* <Route exact path="/tracks" component={Player} /> */}
             <Route exact path="/information" component={Information} />
-            <Route exact path="/record" component={Record} /> 
+            <Route exact path="/profile" component={Profile} /> 
             {/* <Route exact path="/edit-post" component={EditPostPage}/>
             <Route exact path="/edit-post/:postId" component={EditPostPage}/>
             <Route exact path="/posts" component={PostPage}/> */}

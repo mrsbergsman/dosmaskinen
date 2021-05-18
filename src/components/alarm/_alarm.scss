@@ -92,18 +92,28 @@ input[type=time]::-webkit-datetime-edit-minute-field {
 .add-btn {
   position: absolute;
   bottom: 0;
-  width: 100px;
-  height: 40px;
-  background-color:$headerColor;
-  color:white;
-  font-size: 20px;
-  margin-left: 30px;
-  border-radius: 7px;
-  border:none;
+  // width: 100px;
+  // height: 40px;
+  // background-color:$headerColor;
+  // color:white;
+  // font-size: 20px;
+  // margin-left: 30px;
+  // border-radius: 7px;
+  // border:none;
+  background-color: $button !important;
+  color: white;
+  border: none !important;
+  border-radius: 4px;
+  width: 6%;
+  font-family: $fontRoboto;
+  text-transform: uppercase;
+  letter-spacing: 2px !important;
+  margin: 36.108px 8px 3px 15px; //styling to match the bootstrap btn
+  padding: 6px 12px; //styling to match the bootstrap btn
 }
 
 .add-btn:hover {
-  background-color: #638783
+  background-color:  $hoverbtn !important;
 }
 
 // dropdown button

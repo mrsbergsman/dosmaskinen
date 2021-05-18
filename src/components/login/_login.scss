@@ -1,7 +1,8 @@
 @import '../_variables';
+
 .login-container {
     width: 100%;
-    padding-bottom: 10%;
+    margin-bottom: 8%; 
 }
 
 .login-card {
@@ -19,23 +20,45 @@
 .form-control {
     font-size: 15px;
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 20px !important;
 }
 
-.btn btn-dark {
-    background-color: $button;
+input::placeholder {
+    color: rgb(202, 202, 202) !important;
+}
+
+.login-btn {
+    background-color: $button !important;
+    color: white;
+    border: none !important;
+    border-radius: 4px;
+    width: 25%;
+    font-family: $fontRoboto;
+    text-transform: uppercase;
+    letter-spacing: 2px !important;
+    margin: 36.108px 8px 9.0246px 15px; //styling to match the bootstrap btn
+    padding: 6px 12px; //styling to match the bootstrap btn
+}
+
+.login-btn:hover {
+    background-color: $hoverbtn !important;
+}
+
+.cancel-btn{
+    background-color: rgb(185, 123, 123);
     color: white;
     border: none;
-    width: 20%;
+    border-radius: 4px;
+    width: 25%;
     font-family: $fontRoboto;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 8%;
-    margin-bottom: 10%;
+    margin: 36.108px 8px 9.0246px 15px; //styling to match the bootstrap btn
+    padding: 6px 12px; //styling to match the bootstrap btn
 }
 
-.btn btn-dark:hover {
-    background-color: $hoverbtn;
+.cancel-btn:hover {
+    background-color:rgb(143, 96, 96) ;
 }
 
 .account-text {

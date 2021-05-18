@@ -1,6 +1,8 @@
 @import '../_variables';
+
 .register-container {
     width: 100%;
+    padding-bottom: 8%;
 }
 
 .card {
@@ -19,23 +21,45 @@
 .form-control {
     font-size: 15px;
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 20px !important;
 }
 
-.btn btn-dark {
+input::placeholder {
+    color: rgb(202, 202, 202) !important;
+}
+
+.register-btn {
     background-color: $button;
     color: white;
     border: none;
-    width: 20%;
+    border-radius: 4px;
+    width: 25%;
     font-family: $fontRoboto;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 8%;
-    margin-bottom: 10%;
+    margin: 36.108px 8px 9.0246px 15px; //styling to match the bootstrap btn
+    padding: 6px 12px; //styling to match the bootstrap btn
 }
 
-.btn btn-dark:hover {
+.register-btn:hover {
     background-color: $hoverbtn;
+}
+
+.cancel-btn{
+    background-color: rgb(185, 123, 123);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 25%;
+    font-family: $fontRoboto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 36.108px 8px 9.0246px 15px; //styling to match the bootstrap btn
+    padding: 6px 12px; //styling to match the bootstrap btn
+}
+
+.cancel-btn:hover {
+    background-color:rgb(155, 96, 96) ;
 }
 
 .account-text {
