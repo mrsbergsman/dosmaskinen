@@ -13,7 +13,6 @@ const Footer = () => {
     <>
       <footer className="footer">
       <div className="footer-container">
-      
         <div className="footer-left">
           <p className="about-header">About</p>
           <p className="about-text">

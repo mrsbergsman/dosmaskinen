@@ -4,9 +4,6 @@ import Footer from '../footer/Footer';
 import './_start.scss'
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import Scrollspy from 'react-scrollspy'
-
-
 import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import onePill from '../../images/medIconTransp.png';
@@ -21,8 +18,6 @@ function Start() {
     AOS.init({
     });
   }, []);
-
-  
 
   return (
     <>
