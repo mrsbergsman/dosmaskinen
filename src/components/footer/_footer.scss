@@ -71,6 +71,7 @@
 
 .footer-right{
     width: 33%;
+    margin-right: -18%;
 }
 
 .about-header{
@@ -283,10 +284,11 @@
     .footer-right{
         width: 100%;
         margin-bottom: 25px;
+        margin-right: 0;
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .footer-container{
         padding: 10px;
     }
@@ -301,6 +303,7 @@
         width: 40%;
         margin-bottom: 25px;
         padding-left: 20px;
+        margin:0;
     }
 }
 
