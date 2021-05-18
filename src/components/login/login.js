@@ -41,37 +41,37 @@ const Login = ({dispatchLoginAction}) => {
       <br/>
       <div className="login-container">
       <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-        <h1>Have a account?</h1>
+        <h1>Have an account?</h1>
         <h5>Login here</h5>
         <form noValidate onSubmit={handleOnSubmit}  >
             <div className="form-group text-left">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">Email address:</label>
               <input noValidate id="email"
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="form-control" />
                     
             </div>
             <div className="form-group text-left">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Password:</label>
               <input noValidate id="password"
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Password..."
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-control" />
           </div>
-          <button type="submit" className="btn btn-dark mr-2">
-              Login  </button>
+          <button type="submit" className="login-btn">
+              Login </button>
               <NavLink className="cancel"exact to="/">
-            <button className="btn btn-dark mr-2"> 
-              Cancel  </button></NavLink>
-            <br />
-            <br/>
+            <button className="cancel-btn"> 
+              Cancel </button></NavLink>
+            {/* <br/>
+            <br/> */}
           </form>
         </div>
       </div>

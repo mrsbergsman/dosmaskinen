@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
 import './_navigationbar.scss'
+
 function Navigationbar () {
  return (
    <>
@@ -10,8 +11,8 @@ function Navigationbar () {
           <NavLink className="nav" exact to="/home">
             <li className='nav-link'>Home</li>
           </NavLink>
-          <NavLink className="nav" exact to="/record">
-            <li className='nav-link'>Record a message</li>
+          <NavLink className="nav" exact to="/profile"> 
+            <li className='nav-link'>Profile</li>
           </NavLink>
           <NavLink className="nav" exact to="/information">
             <li className='nav-link'>Information</li>
@@ -32,8 +33,8 @@ function Navigationbar () {
               <li className='mobil-link'>Home</li>
               <hr style={{width:'70%'}}/>
             </NavLink>
-            <NavLink exact to="/record">
-              <li className='mobil-link'>Record a message</li>
+            <NavLink exact to="/profile"> 
+              <li className='mobil-link'>Profile</li>
               <hr style={{width:'70%'}}/>
             </NavLink>
             <NavLink exact to="/information">

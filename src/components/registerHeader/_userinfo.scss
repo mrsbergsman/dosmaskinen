@@ -11,6 +11,7 @@
 }
  
 .user-container {
+
    background-color: $bgColor;
    width:100%;
    //position and z-index is necessary for the hamburgermenu
@@ -22,7 +23,7 @@
 
 .user-badge {
    font-family: $fontRoboto;
-   background-color: $bgColor;
+   font-size: 15px;
    text-align: center;
 }
  

@@ -13,7 +13,7 @@ const userSchema = new Schema({
         lowercase: true,
         validate: [emailValidator, 'incorrect mail format']
     },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
 });
 
 function emailValidator(value) {

@@ -12,8 +12,9 @@ export const registerUser = (data, onSuccess, onError) => ({
       success: (response) => (setUserInfo(response)),
       postProcessSuccess: onSuccess,
       postProcessError: onError
-  }
+  },
 });
+
 
 export const loginUser = (data, onSuccess, onError) => ({
   // Invoke the API
