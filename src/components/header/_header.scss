@@ -1,0 +1,38 @@
+@import '../_variables';
+.header-container {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    background-color:#c1d2d0;
+    width: 100%;
+    // this is necessary for the hamburgermenu 
+    //not to look funny when its opend
+    position: relative;
+    z-index: 3;
+}
+.logo-box {
+    width: 30%;
+    display: inline;
+}
+.logo {
+    margin-top: 0px;
+    font-family: $fontRoboto;
+    color: white;
+    letter-spacing: 4px;
+    font-size: 30px;
+    text-align: left;
+    margin-left: 7%;
+    padding: 18px;
+}
+@media only screen and (max-width: 900px) {
+    .logo {
+        text-align: center;
+        margin-left: 0px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .logo {
+        font-size: 22px;
+        padding: 25px;
+    }
+}
