@@ -1,12 +1,17 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
 import './_navigationbar.scss'
+import Header from '../header/Header';
+// import './_header.scss';
+
 
 function Navigationbar () {
  return (
    <>
    {/* this is the navbar for full screen */}
+  
     <div className="navigationbar-container">
+    <h1 className="logo">MedicMinder</h1>
         <ul className="navlinks">
           <NavLink className="nav" exact to="/home">
             <li className='nav-link'>Home</li>
