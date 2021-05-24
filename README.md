@@ -42,7 +42,7 @@ cd server
 npm start
 ```
 
-### Start the Applicatio
+### Start the Application
 
 ```sh
 cd dosmaskinen
