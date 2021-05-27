@@ -14,8 +14,8 @@ function Home () {
      <Navigationbar/>
        <div className="home-container">
          <Alarm/>
-         <Footer/> 
        </div>
+       <Footer/> 
    </>
  );
 }

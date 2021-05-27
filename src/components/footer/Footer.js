@@ -11,6 +11,7 @@ import './_footer.scss';
 const Footer = () => {
   return (
     <>
+    <div className="footer-wrapper">
       <footer className="footer">
       <div className="footer-container">
         <div className="footer-left">
@@ -53,6 +54,7 @@ const Footer = () => {
         </div>
       </footer>
       <CompanyTrades/>
+      </div>
     </>
   );
 }

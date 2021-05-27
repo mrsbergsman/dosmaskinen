@@ -5,12 +5,14 @@ import Register from '../components/register/register';
 import StartHeader from './StartHeader'
 
 const RegisterPage = () => (
-  <div className="register-container">
+  <>
     <StartHeader/>
-    <Header/>
-    <Register />
+    <div className="register-container">
+      <Header/>
+      <Register />
+    </div>
     <Footer/>
-  </div>
+  </>
 );
 
 export default RegisterPage;
