@@ -4,13 +4,16 @@ import Header from '../components/header/Header';
 import Login from '../components/login/login';
 import StartHeader from './StartHeader'
 
+
 const LoginPage = () => (
-  <div className="login-container">
+  <>
     <StartHeader/>
-    <Header/>
-    <Login />
+    <div className="login-container">
+      <Header/>
+      <Login />
+    </div>
     <Footer/>
-  </div>
+  </>
 );
 
 export default LoginPage;
