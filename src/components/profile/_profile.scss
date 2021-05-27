@@ -2,7 +2,7 @@
 
 .profile-container{
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 .profile-top-box{
@@ -51,12 +51,6 @@
     background-color: #f1eee7;
 }
 
-// .vl {
-//     display: inline-block;
-//     border-left: 1px solid $text;
-//     height: 30px;
-//   }
-
 .change-box2{
     width: 90%;
     margin: auto;
@@ -104,4 +98,53 @@ input::placeholder {
 
 .changePassword-btn:hover{
     background-color: $hoverbtn !important;
+}
+
+//responsive design
+@media (max-width: 566px) {
+    .profile-header{
+        font-size: 30px !important;
+    }
+
+    .changeButton{
+        font-size: 15px !important;
+        margin-bottom: -10px !important;
+        padding: 8px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-header{
+        font-size: 28px !important;
+    }
+
+    .changeButton{
+        font-size: 15px !important;
+        
+    }
+}
+
+@media (max-width: 696px) {
+    .profile-header{
+        font-size: 40px;
+    }
+
+    .changeButton{
+        font-size: 15px !important;
+        padding: 6px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 768px) {
+    .changeButton{
+        font-size: 13px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 965px) {
+    .changeButton{
+        font-size: 15px;
+    }
 }

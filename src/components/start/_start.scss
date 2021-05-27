@@ -296,14 +296,15 @@
   }
 
   .navigation{
-    margin-top: -2% !important;
+    margin-top: -3% !important;
     margin-bottom: 6% !important;
   }
 
   .header-link{
-    padding: 4px 6px 4px 6px !important;
+    padding: 3px 6px 3px 6px !important;
     font-size: 2.5vw !important;
   }
+
   .bottom-information-box{
     padding: 1%;
     margin-top: 10% !important;
@@ -320,16 +321,15 @@
 
   .welcom-text-box{
     margin-left: 10%;
-    margin-top: -10%;
   }
 
   .welcome-underText{
-    font-size: 3vw;
-    margin-top: 25% !important;
+    font-size: 2.9vw !important;
+    margin-top: 12% !important;
   }
 
   .welcome-text{
-    font-size: 3.5vw;
+    font-size: 3.6vw !important;
   }
 
   .navigation{
@@ -337,18 +337,15 @@
     margin-bottom: 7%;
     margin-left: 10%;
 }
-
-  .header-nav{
-    font-size: 1.8vw;
-  }
-
+ 
   .header-link{
-    padding: 8px 10px 8px 10px;
+    padding: 5px 10px 5px 10px !important;
+    font-size: 2.4vw !important;
   }
 
   .bottom-information-box{
     padding: 1%;
-    margin-top: 10% !important;
+    margin-top: 8% !important;
     margin-left: -116% !important;
   }
 
@@ -357,19 +354,19 @@
   }
 
   .information-header{
-    font-size: 3.2vw !important;
+    font-size: 4vw !important;
     letter-spacing: 2px;
-    margin-top: 2% !important;
+    margin-top: -1% !important;
     
   }
 
   .index-info-text{
-    font-size: 2.3vw !important;
+    font-size: 2.8vw !important;
     font-weight: bold;
   }
   
   .information-text{
-    font-size: 2vw !important;
+    font-size: 2.7vw !important;
     margin-bottom: 7% !important;
   }
 
@@ -414,7 +411,7 @@
   .start-icon-header{
     margin-top: 2%;
     margin-left: 0;
-    font-size: 3vw !important;
+    font-size: 4.2vw !important;
     text-align: center !important;
     letter-spacing: 1px;
     color: $headerColor;
@@ -423,7 +420,7 @@
   .start-icon-underText{
     margin-top: 5%;
     // margin-left: -50%;
-    font-size: 2.3vw !important;
+    font-size: 3 vw !important;
     font-weight: bold;
     margin-left: 0;
     text-align: center !important;
@@ -434,7 +431,7 @@
     margin-left: 0;
     font-family: $fontRoboto;
     text-align: center !important;
-    font-size: 2vw !important;
+    font-size: 3vw !important;
   }
   .col{
     width: 100%;
@@ -469,10 +466,9 @@
   .bottom-information-box{
     padding: 1%;
     margin-top: 10% !important;
-    margin-left: -116% !important;
+    margin-left: 50% !important;
     margin-bottom: 5%;
   }
-
   .bottom-box2-header{
     display: none;
   }
@@ -581,25 +577,27 @@
 /* Large devices (laptops/desktops, 992px and down) */
 @media only screen and (max-width: 992px) {
 
+  .information-header{
+    font-size: 3vh !important;
+  }
   .bottom-information-box{
-    padding: 12%;
+    padding: 4%;
     margin-top: 20%;
-    margin-left: -50%;
-    
+    margin-left: -50% !important;
   }
 
   .index-info-text{
-    font-size: 1.7vw;
+    font-size: 2.2vw;
   }
   
   .information-text{
-    font-size: 1.4vw;
+    font-size: 2vw;
   }
 
   .machine-image{
     width: 18vw;
     margin-top: 40%;
-    margin-left: -40%;
+    margin-left: -50% !important;
   }
 
   .header-nav{
@@ -613,6 +611,32 @@
   .welcome-underText{
     font-size: 1.9vw;
   }
+
+  .bottom-box2-header{
+    font-size: 3vh;
+  }
+
+  .scrollink {
+    font-size: 1.6vw;
+    padding: 0.5%;
+  }
+
+  .start-icon-header{
+    font-size: 1.7vw;
+    letter-spacing: 1px;
+  }
+
+  .start-icon-underText{
+    margin-top: 5%;
+    font-size: 1.3vw;
+  }
+
+  
+.start-icon-text{
+  margin-top: 2%;
+  font-size: 1.3vw;
+}
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -623,5 +647,29 @@
 
   .header-link{
     padding:6px 15px 6px 15px;
+  }
+
+  .bottom-information-box{
+    padding: 4%;
+    margin-top: 30%;
+    margin-left: -35%;
+  }
+
+  .information-header{
+    font-size: 3.4vh !important;
+  }
+
+  .machine-image{
+    width: 20vw;
+    margin-top: 43%;
+    margin-left: -20%;
+  }
+
+  .index-info-text{
+    font-size: 1.7vw;
+  }
+
+  .information-text{
+    font-size: 1.3vw;
   }
 }

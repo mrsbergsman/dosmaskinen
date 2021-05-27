@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.min.css";
 import './_login.scss';
 
 import {loginUser} from '../../redux/actions/authActionCreators'
@@ -15,7 +16,7 @@ const Login = ({dispatchLoginAction}) => {
     event.preventDefault();
     // if (isFormInvalid()) updateErrorFlags();
     dispatchLoginAction(email, password,
-    () => toast.dark("🦄 Logged In Successfully!"),
+    () => toast("Logged In Successfully!"),
     (message) => toast.error(`Error: ${message}`));
   };
   const handleCancelForm = event => {
@@ -36,13 +37,10 @@ const Login = ({dispatchLoginAction}) => {
 
   return (
     <>
-      <br />
-      <br />
-      <br/>
       <div className="login-container">
       <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-        <h1>Have an account?</h1>
-        <h5>Login here</h5>
+        <h1 className="login-header">Login</h1>
+        <div className="theForm">
         <form noValidate onSubmit={handleOnSubmit}  >
             <div className="form-group text-left">
               <label htmlFor="email">Email address:</label>
@@ -64,15 +62,25 @@ const Login = ({dispatchLoginAction}) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-control" />
-          </div>
-          <button type="submit" className="login-btn">
-              Login </button>
+            </div>
+            <div className="login-buttons">
+              <button type="submit" className="login-btn">
+                Login 
+              </button>
               <NavLink className="cancel"exact to="/">
-            <button className="cancel-btn"> 
-              Cancel </button></NavLink>
-            {/* <br/>
-            <br/> */}
+                <button className="cancel-btn"> 
+                  Cancel 
+                </button>
+              </NavLink>
+              </div>
+            <div className="login-redirect">
+              <p className="noAccount">Dont have an account? </p>
+              <NavLink className="redirectToRegister-Link"exact to="/register">
+                Register here
+              </NavLink>
+            </div>
           </form>
+          </div>
         </div>
       </div>
     </>

@@ -63,7 +63,6 @@
   font-size: 18px;
   font-style: italic;
    padding:5px;
- 
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -176,13 +175,13 @@ audio {
   border-bottom: 1px solid lightgrey !important;
   padding-bottom: 10px !important;
   color:$text;
-  
-  
 }
 
 // card styling
 #main-card-container {
   background-color: $bgColor;
+  margin-top: 70px;
+  margin-bottom: 30px;
 }
 #card-container {
   display: flex;
@@ -192,6 +191,7 @@ audio {
   width: 70%;
   margin: 0px auto;
   margin-top:50px;
+
 }
 .card-styling {
   position: relative;
