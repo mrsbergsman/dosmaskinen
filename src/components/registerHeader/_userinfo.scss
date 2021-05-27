@@ -1,39 +1,26 @@
-
 @import '../_variables';
 .user-wrapper {
    display: flex;
    justify-content: space-between;
    align-items: center;
    width: 100%;
-   background-color: $bgColor;
+   background-color:#efefef;
+   // background-color: $bgColor;
    position: relative;
    z-index: 3;
 }
  
 .user-container {
-   display: flex;
-   justify-content: center;
-   margin: 0;
-   padding: 0;
-   height: auto;
-   height: 25px;
+
    background-color: $bgColor;
-   width:fit-content;
+   width:100%;
    //position and z-index is necessary for the hamburgermenu
    //not to look funny when its opend
    position: relative;
    z-index: 3;
+   margin-left: auto;
 }
- .logo {
-   margin-top: 0px;
-   font-family: $fontRoboto;
-   color: $headerColor;
-   letter-spacing: 4px;
-   font-size: 30px;
-   text-align: left;
-   margin-left: 7%;
-   padding: 20px;
-}
+
 .user-badge {
    font-family: $fontRoboto;
    font-size: 15px;
@@ -72,10 +59,7 @@
     .logout{
     font-size: 12px;
     }
-    .logo {
-    margin-left: 0%;
-    font-size: 22px; 
-    }
+
     .user-info {
     padding-right: 0px;
     font-size: 17px;
@@ -86,10 +70,7 @@
     .user-wrapper  {
     flex-direction: column-reverse;
     }
-    .logo {
-    padding:0px;
-    margin-bottom: 7px;
-    }
+ 
 }
 
  @media only screen and (max-width: 350px) {
@@ -100,3 +81,4 @@
     font-size: 12px;
     }
 }
+
