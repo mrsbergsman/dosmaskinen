@@ -18,7 +18,7 @@ const Register = ({dispatchRegisterAction}) => {
     e.preventDefault();
     // if (isFormInvalid()) updateErrorFlags();
     dispatchRegisterAction(firstName, lastName, mobilnr, email, password,
-    () => toast.dark("Account Created Successfully!"),
+    () => toast("Account Created Successfully!"),
     (message) => toast.error(`Error: ${message}`));
   };
 
@@ -45,75 +45,84 @@ const Register = ({dispatchRegisterAction}) => {
   // };
 
   return (
-    <>
-      <br />
-      <br />
+    <> 
     <div className="register-container">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-          <br />
-          <br/>
-        <h3>New User ?</h3>
-        <h5>Create an account</h5>
-        <br />
-          <form noValidate onSubmit={handleOnSubmit}>
-            <div className="form-group text-left">
-            <label htmlFor="firstName">Firstname:</label>
-            <input noValidate id="firstName"
-            type="text"
-            name="firstName"
-            placeholder="Firstname..."
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            className="form-control" />
-        </div>
-      <div className="form-group text-left">
-        <label htmlFor="lastName">Lastname:</label>
-        <input noValidate id="LastName"
-          type="text"
-          name="lastName"
-          placeholder="Lastname..."
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className="form-control" />
-            </div>
-            <div className="form-group text-left">
-        <label htmlFor="mobilNr">Mobile phone number:</label>
-        <input noValidate id="mobilnr"
-          type="mobilnr"
-          name="mobilnr"
-          placeholder="Phone number..."
-          value={mobilnr}
-          onChange={(e) => setMobilNr(e.target.value)}
-          className="form-control" />
-      </div>
-        <div className="form-group text-left">
-        <label htmlFor="email1">Email address:</label>
-        <input noValidate id="email1"
-          type="email"
-          name="email"
-          placeholder="Email..."
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="form-control" />
-      </div>
-        <div className="form-group text-left">
-          <label htmlFor="password1">Password:</label>
-          <input noValidate id="password1"
-            type="password"
-            name="password"
-            placeholder="Password..."
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="form-control" />
-            </div>
-            <button type="submit" className="register-btn">Register </button>
-            <NavLink className="cancel"exact to="/">
-            <button className="cancel-btn"> 
-              Cancel  </button></NavLink>
-          </form>
-          {/* <br />
-          <br />
-          <br /> */}
+        <h1 className="register-header">Create an account</h1>
+          <div className="theForm">
+            <form noValidate onSubmit={handleOnSubmit}>
+              <div className="form-group text-left">
+                <label htmlFor="firstName">Firstname:</label>
+                <input noValidate id="firstName"
+                  type="text"
+                  name="firstName"
+                  placeholder="Firstname..."
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="form-control" 
+                />
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="lastName">Lastname:</label>
+                <input noValidate id="LastName"
+                  type="text"
+                  name="lastName"
+                  placeholder="Lastname..."
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="form-control" 
+                />
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="mobilNr">Mobile phone number:</label>
+                <input noValidate id="mobilnr"
+                  type="mobilnr"
+                  name="mobilnr"
+                  placeholder="Phone number..."
+                  value={mobilnr}
+                  onChange={(e) => setMobilNr(e.target.value)}
+                  className="form-control" 
+                />
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="email1">Email address:</label>
+                <input noValidate id="email1"
+                  type="email"
+                  name="email"
+                  placeholder="Email..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="form-control" 
+                />
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="password1">Password:</label>
+                <input noValidate id="password1"
+                  type="password"
+                  name="password"
+                  placeholder="Password..."
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="form-control" />
+                </div>
+                <div className="register-buttons">
+                  <button type="submit" className="register-btn">
+                    Register 
+                  </button>
+                  <NavLink className="cancel"exact to="/">
+                    <button className="cancel-btn"> 
+                      Cancel 
+                    </button>
+                  </NavLink>
+                </div>
+                <div className="register-redirect">
+                  <p className="haveAccount">Allready have an account? </p>
+                  <NavLink className="redirectToLogin-Link"exact to="/login">
+                    Login here
+                  </NavLink>
+                </div>
+            </form>
+          </div>
         </div>
       </div>
     </>

@@ -32,7 +32,7 @@
 }
 
 .info-icons{
-    width: 18vw;
+    width: 300px;
 }
 
 .info-box1{
@@ -47,7 +47,7 @@
     font-family: $fontRoboto;
     text-align: justify;
     color: $headerColor;
-    font-size: 1.8vw;
+    font-size: 35px;
     letter-spacing: 1px;
 }
 
@@ -55,32 +55,33 @@
     font-family: $fontRoboto;
     text-align: justify;
     color: $text;
-    font-size: 1vw;
+    font-size: 20px;
 }
 
-.info-medicine-box{
-    //background-color: $bgColor;
-    // background-color: #f8faf9;
+.info-medicine-box{ 
     margin-bottom: 7%;
     padding: 1% 9% 3% 0%;
-    //  box-shadow: 8px 8px 8px #b6b6b6;
-    //  border-radius: 10px;
 }
 
 .info-setTime-box{
-    // background-color: $bgColor;
-    // background-color: #f8faf9;
     margin-bottom: 7%;
     padding: 1% 0% 3% 9%;
-    // box-shadow: 8px 8px 8px #b6b6b6;
-    // border-radius: 10px;
 }
 
 .info-message-box{
-    //background-color: $bgColor;
-    // background-color: #f8faf9;
     margin-bottom: 8%;
     padding: 1% 9% 3% 0%;
-    // box-shadow: 8px 8px 8px #b6b6b6;
-    // border-radius: 10px;
+}
+
+//responsive design
+@media (max-width: 600px) {
+   
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 992px) {
+    
 }
