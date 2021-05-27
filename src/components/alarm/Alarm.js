@@ -101,6 +101,7 @@ class Alarm extends Component {
         return  this.state.items.map(function (item, i) {
           const { title,message,time } = item 
               return (
+                <div className="card-container">
                 <ul className="card-styling" key={"item-" + i}>
                   <li className="card-time"><p>Time:</p><b className="time-style">{time}</b></li>
                   <li className="card-message"><p>Alarm:</p><b className="message-style">{message}</b></li>
@@ -117,6 +118,7 @@ class Alarm extends Component {
                       />
                   </div>
                 </ul>
+                </div>      
             );
         });
     }
