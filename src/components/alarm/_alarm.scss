@@ -1,6 +1,9 @@
 @import '../_variables';
 
 //form-styling
+.alarmForm-container {
+  height:100%
+}
 .form-container {
   display: flex;
   flex-direction: row;
@@ -182,6 +185,7 @@ audio {
   background-color: $bgColor;
   margin-top: 70px;
   margin-bottom: 30px;
+  min-height: 35vh;
 }
 #card-container {
   display: flex;
